@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Bus from "../assets/Bus.png";
 import { ArrowRight } from "lucide-react";
 import logo from "../assets/image1.png";
@@ -25,6 +26,7 @@ import {
 const Home = () => {
 
     const servicesRef = useRef<HTMLDivElement>(null);
+    const navigate = useNavigate();
 
     const scrollToServices = () => {
         servicesRef.current?.scrollIntoView({
@@ -34,33 +36,32 @@ const Home = () => {
     };
     return (
         <>
-            <section
-                className="relative w-full min-h-screen lg:h-[calc(100vh-90px)] bg-cover bg-center"
+           <section
+    className="relative w-full min-h-[1000px] lg:min-h-screen bg-cover bg-center"
                 style={{ backgroundImage: `url(${Bus})` }}
             >
                 <div className="relative z-10 w-full h-full flex items-center">
-                    <div className="w-full lg:w-[45%] px-6 sm:px-10 lg:pl-50 lg:-translate-y-19 py-20 lg:py-0">
+                    <div className="w-full lg:w-[45%] px-6 sm:px-10 lg:pl-50 lg:-translate-y-19 pt-28 pb-20">
                         {/* Tagline */}
                         <p className="uppercase tracking-wide text-lg font-semibold mb-5">
-                            <span className="text-[#7BAF2A]">INTELLIGENT SUPPORT.</span>{" "}
-                            <span className="text-[#7BAF2A]">SEAMLESS MOBILITY.</span>
+                            <span className="text-[#7BAF2A]">CARE THAT FLOWS WITH YOU.</span>{" "}
                         </p>
 
                         {/* Heading */}
-                        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0A2D63] leading-tight">
+                        <h1 className="text-2xl sm:text-4xl lg:text-[64px] font-bold text-[#0A2D63] leading-tight">
                             Powering the
                             <br />
                             Future of Mobility.
                         </h1>
 
-                        <h2 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#7BAF2A] leading-tight">
+                        <h2 className="text-2xl sm:text-4xl lg:text-[64px] font-bold text-[#7BAF2A] leading-tight">
                             Together.
                         </h2>
 
                         {/* Description */}
                         <p className="mt-8 text-[28px] leading-relaxed text-[#1f2937] drop-shadow-sm">
                             <span className="font-bold">
-                                End-to-End After Sales & Lifecycle Support
+                                End-to-End EV After Sales & Lifecycle Support
                             </span>
                             <br />
                             <span className="font-semibold">
@@ -68,22 +69,31 @@ const Home = () => {
                             </span>
                         </p>
                         {/* Additional Description */}
-                        <p className="mt-5 text-base sm:text-lg lg:text-xl leading-relaxed text-gray-700 max-w-2xl">
-                            From concept to retirement, we deliver intelligent, reliable, 
-                            <br/>
-                            and sustainable mobility solutions that keep your 
-                            <br/>
-                            mobility ecosystem running at its best.
+                        <p className="mt-6 text-lg text-gray-700 leading-relaxed">
+                            Professional EV diagnostics, field service,
+                            <br />
+                            commissioning, warranty support, and
+                            <br />
+                            technical consulting across India.
                         </p>
                         {/* Buttons */}
-                        <div className="flex gap-6 mt-10">
+                        <div className="flex gap-5 mt-10">
+
+                            <button
+                                onClick={() => navigate("/enquiry")}
+                                className="bg-[#0A2D63] text-white px-8 py-3 rounded-full hover:bg-[#7BAF2A] transition"
+                            >
+                                Request Services
+                            </button>
+
                             <button
                                 onClick={scrollToServices}
-                                className="cursor-pointer bg-[#0A2D63] text-white px-8 py-4 rounded-full flex items-center gap-2 hover:bg-[#123f83] transition"
+                                className="inline-flex items-center gap-2 bg-[#7BAF2A] text-white px-8 py-3 rounded-full whitespace-nowrap hover:bg-[#0A2D63] transition"
                             >
-                                Explore Services
-                                <ArrowRight size={20} />
+                                <span>Explore Services</span>
+                                <ArrowRight size={18} />
                             </button>
+
                         </div>
                     </div>
                     {/* Features Card */}
@@ -153,10 +163,42 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <section className="pt-32 lg:pt-36 pb-20 bg-white">
+                <div className="w-[94%] lg:w-[82%] mx-auto">
+
+                    <div className="max-w-4xl">
+
+                        <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
+                            About <span className="text-[#7BAF2A]">Us</span>
+                        </h2>
+
+                       <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
+                        <p className="text-gray-600 text-lg leading-8 text-justify">
+                            Sukalpa Mobility Services is a leading EV after-sales
+                            service provider dedicated to maximizing vehicle uptime
+                            and ensuring reliable fleet performance.
+                            <br /><br />
+                            With expertise in electric buses, commercial EVs,
+                            diagnostics, commissioning and technical support,
+                            we partner with OEMs and fleet operators.to deliver
+                            world-class service solutions across india.
+                        </p>
+
+                        <button
+                            onClick={() => navigate("/about")}
+                            className="mt-10 bg-[#0A2D63] hover:bg-[#7BAF2A] transition text-white px-8 py-3 rounded-full"
+                        >
+                            View More
+                        </button>
+
+                    </div>
+
+                </div>
+            </section>
 
             <section
                 ref={servicesRef}
-                className="bg-white pt-28 pb-16"
+                className="bg-white pt-2 pb-16"
             >
                <div className=" w-[94%] lg:w-[82%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch ">
 
@@ -400,13 +442,24 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ================= WHY CHOOSE US ================= */}
+           {/* ================= WHY SUKALPA ================= */}
 
-            <section className="bg-white py-10">
+            <section className="bg-white py-16">
 
-                 <div className="w-[94%] lg:w-[82%] mx-auto">
+                <div className="w-[94%] lg:w-[82%] mx-auto">
 
-                    {/* Single Container */}
+                    {/* Heading */}
+                    <div className="max-w-4xl mb-10">
+
+                        <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
+                            Why <span className="text-[#7BAF2A]">Sukalpa</span>
+                        </h2>
+
+                        <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3"></div>
+
+                    </div>
+
+                    {/* Content */}
                     <div className="bg-[#F8FAFC] rounded-3xl px-8 py-6 shadow-sm">
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-gray-200">
@@ -431,7 +484,6 @@ const Home = () => {
 
                             </div>
 
-
                             {/* Card 2 */}
                             <div className="flex items-center gap-5 px-6">
 
@@ -451,7 +503,6 @@ const Home = () => {
                                 </div>
 
                             </div>
-
 
                             {/* Card 3 */}
                             <div className="flex items-center gap-5 px-6">
@@ -473,7 +524,6 @@ const Home = () => {
 
                             </div>
 
-
                             {/* Card 4 */}
                             <div className="flex items-center gap-5 px-6">
 
@@ -493,11 +543,72 @@ const Home = () => {
                                 </div>
 
                             </div>
+
                         </div>
+
                     </div>
+
+                </div>
+
+            </section>
+            <section className="py-20 bg-white">
+                <div className="w-[94%] lg:w-[82%] mx-auto">
+
+                    {/* Heading */}
+                    <div className="max-w-4xl mb-12">
+                        <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
+                            Testimonials
+                        </h2>
+
+                        <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
+                    </div>
+
+                    {/* Testimonial Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
+                            <p className="text-gray-600 leading-7 italic">
+                                "Excellent EV support and quick response."
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
+                            <p className="text-gray-600 leading-7 italic">
+                                "Professional engineering team."
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
+                            <p className="text-gray-600 leading-7 italic">
+                                "Reliable after sales partner."
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
             </section>
 
+            {/* ================= CALL TO ACTION ================= */}
+            <section className="bg-white py-16">
+                <div className="w-[94%] lg:w-[82%] mx-auto">
+                    <div className="bg-[#F8FAFC] rounded-3xl px-8 py-14 text-center shadow-sm">
+
+                        <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
+                            Ready to Power
+                            <span className="text-[#7BAF2A]"> Your Mobility?</span>
+                        </h2>
+
+                        <button
+                            onClick={() => navigate("/enquiry")}
+                            className="mt-8 bg-[#7BAF2A] hover:bg-[#0A2D63] transition text-white px-8 py-3 rounded-full inline-flex items-center gap-2"
+                        >
+                            Query Form
+                            <ArrowRight size={18} />
+                        </button>
+                    </div>
+                </div>
+            </section>
             {/* ================= FOOTER ================= */}
 
             <footer className="relative bg-[#F8FAFC] overflow-hidden">
@@ -534,7 +645,7 @@ const Home = () => {
                         {/* READY TO POWER */}
                         <div className="col-span-1">
 
-                            <h2 className="text-3xl mt-5 font-bold text-[#0A2D63] leading-tight">
+                            <h2 className="mt-8 text-3xl mt-5 font-bold text-[#0A2D63] leading-tight">
                                 Ready to Power
                                 <br />
                                 <span className="text-[#7BAF2A]">
@@ -595,7 +706,7 @@ const Home = () => {
                                     </p>
 
                                     <p className="text-sm font-semibold text-[#0A2D63]">
-                                        +91 80 2254 5678
+                                         +91 98765 43210
                                     </p>
                                 </div>
 
@@ -614,7 +725,7 @@ const Home = () => {
                                     </p>
 
                                     <p className="text-sm font-semibold text-[#0A2D63]">
-                                        enquiry@sjaem.com
+                                         info@sukalpamobility.com
                                     </p>
 
                                 </div>
@@ -672,4 +783,3 @@ const Home = () => {
 };
 
 export default Home;
-
