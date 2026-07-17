@@ -36,40 +36,36 @@ const Home = () => {
     };
     return (
         <>
-           <section
-    className="relative w-full min-h-[1000px] lg:min-h-screen bg-cover bg-center"
+            <section
+                className="relative w-full min-h-screen lg:min-h-screen bg-cover bg-center"
                 style={{ backgroundImage: `url(${Bus})` }}
             >
-                <div className="relative z-10 w-full h-full flex items-center">
-                    <div className="w-full lg:w-[45%] px-6 sm:px-10 lg:pl-50 lg:-translate-y-19 pt-28 pb-20">
+              <div className="relative z-10 w-full h-full flex flex-col">
+                <div className="w-full lg:w-[48%] px-6 sm:px-8 lg:pl-10 xl:pl-16 pt-20 lg:pt-16 pb-12 lg:pb-20 flex flex-col h-full">
+                     <div className="lg:-translate-y-10">
                         {/* Tagline */}
-                        <p className="uppercase tracking-wide text-lg font-semibold mb-5">
+                        <p className="uppercase tracking-wide text-sm font-semibold mb-5">
                             <span className="text-[#7BAF2A]">CARE THAT FLOWS WITH YOU.</span>{" "}
                         </p>
 
                         {/* Heading */}
-                        <h1 className="text-2xl sm:text-4xl lg:text-[64px] font-bold text-[#0A2D63] leading-tight">
+                        <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] xl:text-[58px] font-bold leading-[1.1] text-[#0A2D63]">
                             Powering the
                             <br />
                             Future of Mobility.
                         </h1>
 
-                        <h2 className="text-2xl sm:text-4xl lg:text-[64px] font-bold text-[#7BAF2A] leading-tight">
+                        <h2 className="text-[32px] sm:text-[42px] lg:text-[52px] xl:text-[58px] font-bold leading-[1.1] text-[#7BAF2A]">
                             Together.
                         </h2>
-
                         {/* Description */}
-                        <p className="mt-8 text-[28px] leading-relaxed text-[#1f2937] drop-shadow-sm">
-                            <span className="font-bold">
-                                End-to-End EV After Sales & Lifecycle Support
-                            </span>
+                        <p className="mt-5 max-w-[650px] text-base sm:text-lg lg:text-[22px] xl:text-[24px] font-semibold leading-snug text-[#1f2937]">
+                            End-to-End EV After Sales & Lifecycle Support
                             <br />
-                            <span className="font-semibold">
-                                for Every Journey.
-                            </span>
+                            for Every Journey.
                         </p>
                         {/* Additional Description */}
-                        <p className="mt-6 text-lg text-gray-700 leading-relaxed">
+                        <p className="mt-6 text-sm text-gray-700 leading-relaxed">
                             Professional EV diagnostics, field service,
                             <br />
                             commissioning, warranty support, and
@@ -77,40 +73,33 @@ const Home = () => {
                             technical consulting across India.
                         </p>
                         {/* Buttons */}
-                        <div className="flex gap-5 mt-10">
+                       <div className="flex flex-row sm:flex-row gap-3 mt-8 w-full">
 
-                            <button
-                                onClick={() => navigate("/enquiry")}
-                                className="bg-[#0A2D63] text-white px-8 py-3 rounded-full hover:bg-[#7BAF2A] transition"
-                            >
-                                Request Services
-                            </button>
+                                <button
+                                    onClick={() => navigate("/enquiry")}
+                                    className="w-full sm:w-auto bg-[#0A2D63] text-white px-8 py-3 rounded-full hover:bg-[#7BAF2A] transition"
+                                >
+                                    Request Services
+                                </button>
 
-                            <button
-                                onClick={scrollToServices}
-                                className="inline-flex items-center gap-2 bg-[#7BAF2A] text-white px-8 py-3 rounded-full whitespace-nowrap hover:bg-[#0A2D63] transition"
-                            >
-                                <span>Explore Services</span>
-                                <ArrowRight size={18} />
-                            </button>
+                                <button
+                                    onClick={scrollToServices}
+                                    className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-[#7BAF2A] text-white px-8 py-3 rounded-full hover:bg-[#0A2D63] transition"
+                                >
+                                    <span>Explore Services</span>
+                                    <ArrowRight size={18} />
+                                </button>
 
                         </div>
                     </div>
                     {/* Features Card */}
-                    <div
-                     className="absolute left-1/2 -translate-x-1/2 -bottom-56 sm:-bottom-40 lg:-bottom-12 w-[94%] lg:w-[82%] bg-white rounded-3xl lg:rounded-full shadow-xl px-4 sm:px-6 lg:px-8 py-5 lg:py-6"
-                      >
-                        <div className="grid
-                               grid-cols-1
-                               sm:grid-cols-2
-                               lg:grid-cols-4
-                                 gap-5
-                               lg:gap-0
-                              lg:divide-x
-                             divide-gray-200">
+                        <div className="mt-[50vh] pt-10 lg:mt-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-32 w-full lg:w-[80%]
+                           bg-white rounded-3xl lg:rounded-full shadow-xl px-5 py-6 z-20"
+                        >
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
 
                             {/* Item 1 */}
-                            <div className="flex items-center justify-center gap-3 px-6">
+                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
                                 <RefreshCw className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
 
                                 <div>
@@ -122,7 +111,7 @@ const Home = () => {
                             </div>
 
                             {/* Item 2 */}
-                            <div className="flex items-center justify-center gap-3 px-6">
+                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
                                 <Headset className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
 
                                 <div>
@@ -134,7 +123,7 @@ const Home = () => {
                             </div>
 
                             {/* Item 3 */}
-                            <div className="flex items-center justify-center gap-3 px-6">
+                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
                                 <Users className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
 
                                 <div>
@@ -146,7 +135,7 @@ const Home = () => {
                             </div>
 
                             {/* Item 4 */}
-                            <div className="flex items-center justify-center gap-3 px-6">
+                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
                                 <Cpu className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
 
                                 <div>
@@ -161,6 +150,7 @@ const Home = () => {
 
                         </div>
                     </div>
+                </div>
                 </div>
             </section>
             <section className="pt-32 lg:pt-36 pb-20 bg-white">
@@ -778,6 +768,7 @@ const Home = () => {
                 </div>
 
             </footer>
+    
         </>
     );
 };
