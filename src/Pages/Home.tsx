@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Bus from "../assets/Bus.png";
 import { ArrowRight } from "lucide-react";
-import logo from "../assets/image1.png";
 import onsitediagnostic from "../assets/on_site_diagnostic.png";
 import homologation from "../assets/homologation.png";
 import operation from "../assets/operations.png";
@@ -42,11 +41,13 @@ const Home = () => {
             >
               <div className="relative z-10 w-full h-full flex flex-col">
                 <div className="w-full lg:w-[48%] px-6 sm:px-8 lg:pl-10 xl:pl-16 pt-20 lg:pt-16 pb-12 lg:pb-20 flex flex-col h-full">
-                     <div className="lg:-translate-y-10">
+                    <div className="-translate-y-16 sm:-translate-y-12 lg:-translate-y-10">
                         {/* Tagline */}
-                        <p className="uppercase tracking-wide text-sm font-semibold mb-5">
-                            <span className="text-[#7BAF2A]">CARE THAT FLOWS WITH YOU.</span>{" "}
-                        </p>
+                            <p className="uppercase tracking-wide text-sm font-semibold mb-5 lg:ml-1">
+                                <span className="text-[#7BAF2A]">
+                                    CARE THAT FLOWS WITH YOU.
+                                </span>
+                            </p>
 
                         {/* Heading */}
                         <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] xl:text-[58px] font-bold leading-[1.1] text-[#0A2D63]">
@@ -93,10 +94,11 @@ const Home = () => {
                         </div>
                     </div>
                     {/* Features Card */}
-                        <div className="mt-[50vh] pt-10 lg:mt-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-32 w-full lg:w-[80%]
-                           bg-white rounded-3xl lg:rounded-full shadow-xl px-5 py-6 z-20"
-                        >
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
+                </div>
+                </div>
+                 <div
+                        className="mt-[60vh] sm:mt-[55vh] lg:mt-0 pt-6 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-20 w-full lg:w-[80%] bg-white rounded-3xl lg:rounded-full shadow-xl px-5 lg:py-4 py-5 z-20">
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
 
                             {/* Item 1 */}
                             <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
@@ -150,30 +152,27 @@ const Home = () => {
 
                         </div>
                     </div>
-                </div>
-                </div>
             </section>
-            <section className="pt-32 lg:pt-36 pb-20 bg-white">
-                <div className="w-[94%] lg:w-[82%] mx-auto">
+            <section className="pt-20 lg:pt-32 pb-12 bg-white">
+               <div className="w-[94%] lg:w-[82%] mx-auto lg:pl-8 xl:pl-10">
 
-                    <div className="max-w-4xl">
+                    <div className="max-w-6xl">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
                             About <span className="text-[#7BAF2A]">Us</span>
                         </h2>
 
                        <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
-                        <p className="text-gray-600 text-lg leading-8 text-justify">
-                            Sukalpa Mobility Services is a leading EV after-sales
-                            service provider dedicated to maximizing vehicle uptime
-                            and ensuring reliable fleet performance.
-                            <br /><br />
-                            With expertise in electric buses, commercial EVs,
-                            diagnostics, commissioning and technical support,
-                            we partner with OEMs and fleet operators.to deliver
-                            world-class service solutions across india.
+                        <p className="mt-6 text-gray-600 text-lg leading-8 text-left lg:text-justify">
+                            Sukalpa Mobility Services is a leading EV after-sales service provider dedicated
+                            to maximizing vehicle uptime and ensuring reliable fleet performance.
                         </p>
 
+                        <p className="mt-6 text-gray-600 text-lg leading-8 text-left lg:text-justify">
+                            With expertise in electric buses, commercial EVs, diagnostics, commissioning,
+                            and technical support, we partner with OEMs and fleet operators to deliver
+                            world-class service solutions across India.
+                        </p>
                         <button
                             onClick={() => navigate("/about")}
                             className="mt-10 bg-[#0A2D63] hover:bg-[#7BAF2A] transition text-white px-8 py-3 rounded-full"
@@ -188,12 +187,13 @@ const Home = () => {
 
             <section
                 ref={servicesRef}
-                className="bg-white pt-2 pb-16"
+                className="bg-white pt-0 pb-16"
             >
                <div className=" w-[94%] lg:w-[82%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch ">
 
                     {/* OUR SERVICES */}
-                    <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col h-full">
+                   <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
+
                         <p className="text-2xl font-bold tracking-wide uppercase">
                             <span className="text-[#0A2D63]">Our </span>
                             <span className="text-[#7BAF2A]">Services</span>
@@ -201,7 +201,8 @@ const Home = () => {
 
                         <div className="w-12 h-1 bg-[#7BAF2A] rounded-full mt-2 mb-8"></div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 flex-1">
+                        {/* Content */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
                             {/* Card 1 */}
                             <div className="bg-white rounded-3xl shadow-md p-6">
@@ -253,7 +254,10 @@ const Home = () => {
                                 </div>
 
                                 <ul className="text-gray-600 text-sm space-y-2">
-                                    <li>• Dedicated engineering helpline</li>
+                                    <li className="flex items-start gap-2">
+                                        <span>•</span>
+                                        <span>Dedicated engineering helpline</span>
+                                    </li>
                                     <li>• Real-time fault diagnostics</li>
                                     <li>• 24×7 continuous support</li>
                                 </ul>
@@ -271,25 +275,32 @@ const Home = () => {
                                 </div>
 
                                 <ul className="text-gray-600 text-sm space-y-2">
-                                    <li>• Standard operating procedures</li>
+                                    <li className="flex items-start gap-2">
+                                        <span>•</span>
+                                        <span>Standard operating procedures</span>
+                                    </li>
                                     <li>• Workforce training programs</li>
                                     <li>• Technical manual curation</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <button className="mt-8 text-xl font-semibold flex items-center gap-2">
-                            <span className="text-[#7BAF2A] hover:text-[#0A2D63] transition">
+
+                        {/* Button */}
+                        <button
+                            onClick={() => navigate("/services")}
+                            className="mt-auto pt-8 text-xl font-semibold flex items-center gap-2 group"
+                        >
+                            <span className="text-[#7BAF2A] group-hover:text-[#0A2D63] transition">
                                 Explore All Services
                             </span>
-                            <span className="text-[#7BAF2A] text-2xl">→</span>
+                            <ArrowRight className="w-5 h-5 text-[#7BAF2A] group-hover:text-[#0A2D63] transition" />
                         </button>
                     </div>
 
                     {/* OUR CAPABILITIES */}
-                    <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col h-full ml-0 lg:ml-9">
-
-                        <p className="text-2xl font-bold tracking-wide uppercase">
+                   <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
+                    <p className="text-2xl font-bold tracking-wide uppercase">
                             <span className="text-[#0A2D63]">Our </span>
                             <span className="text-[#7BAF2A]">CAPABILITIES</span>
                         </p>
@@ -297,9 +308,9 @@ const Home = () => {
                         <div className="w-12 h-1 bg-[#7BAF2A] rounded-full mt-2 mb-8"></div>
 
 
-                        <div className="space-y-4 flex-1">
 
-                            {/* Capability Card 1 */}
+                      <div className="space-y-4 flex-grow">
+                           {/* Capability Card 1 */}
                             <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
 
                                 {/* Image */}
@@ -311,7 +322,7 @@ const Home = () => {
                                 {/* Content */}
                                 <div className="flex-1">
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        ON SITE DIAGNOSTIC SOLUTION
+                                        NEW PROTO DEVELOPMENT
                                     </h3>
 
                                     <p className="text-gray-600 text-sm mt-1 leading-relaxed">
@@ -335,7 +346,7 @@ const Home = () => {
                                 <div className="flex-1">
 
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        PRE & POST PRODUCTION SUPPORT
+                                        POST PRODUCTION SERVICES
                                     </h3>
 
 
@@ -374,7 +385,7 @@ const Home = () => {
                                 <div className="flex-1">
 
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        PRE, POST HOMOLOGATION & CERTIFICATION SUPPORT
+                                        PRE HOMOLOGATION AND VEHICLE CERTIFICATION
                                     </h3>
 
 
@@ -391,7 +402,7 @@ const Home = () => {
 
                             </div>
                             {/* Capability Card 4 */}
-                            <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            {/* <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
 
                                 <img
                                     src={operation}
@@ -414,27 +425,25 @@ const Home = () => {
                                 <div className="w-10 h-10 rounded-full border border-[#7BAF2A] flex items-center justify-center">
                                     <Users className="w-5 h-5 text-[#0A2D63]" />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
-                        <button className="mt-8 text-xl font-semibold flex items-center gap-2">
-
-                            <span className="text-[#7BAF2A] hover:text-[#0A2D63] transition">
+                        <button
+                            onClick={() => navigate("/capabilities")}
+                            className="mt-auto pt-8 text-xl font-semibold flex items-center gap-2 group"
+                        >
+                            <span className="text-[#7BAF2A] group-hover:text-[#0A2D63] transition">
                                 Explore All Capabilities
                             </span>
-
-                            <span className="text-[#7BAF2A] text-2xl">
-                                →
-                            </span>
-
+                            <ArrowRight className="w-5 h-5 text-[#7BAF2A] group-hover:text-[#0A2D63] transition" />
                         </button>
                     </div>
                 </div>
             </section>
 
-           {/* ================= WHY SUKALPA ================= */}
+            { }
 
-            <section className="bg-white py-16">
+           <section className="bg-white pt-8 pb-16">
 
                 <div className="w-[94%] lg:w-[82%] mx-auto">
 
@@ -483,12 +492,11 @@ const Home = () => {
 
                                 <div>
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        Reliable & Scalable
+                                        Experienced EV Engineers
                                     </h3>
 
                                     <p className="text-gray-600 text-sm mt-1">
-                                        Built to scale with your
-                                        mobility operations.
+                                        Skilled professionals with extensive expertise in electric mobility solutions.
                                     </p>
                                 </div>
 
@@ -503,12 +511,11 @@ const Home = () => {
 
                                 <div>
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        Customer-Centric
+                                        Pan India Support
                                     </h3>
 
                                     <p className="text-gray-600 text-sm mt-1">
-                                        Experience that puts your
-                                        business first.
+                                        Nationwide service network providing timely support wherever you operate.
                                     </p>
                                 </div>
 
@@ -522,13 +529,14 @@ const Home = () => {
                                 </div>
 
                                 <div>
+                                   
+
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        Data-Driven Insights
+                                        Fast Response Time
                                     </h3>
 
                                     <p className="text-gray-600 text-sm mt-1">
-                                        Smarter decisions for
-                                        better outcomes.
+                                        Rapid diagnostics and quick resolution to maximize fleet uptime.
                                     </p>
                                 </div>
 
@@ -541,7 +549,7 @@ const Home = () => {
                 </div>
 
             </section>
-            <section className="py-20 bg-white">
+            <section className="pt-10 pb-20 bg-white">
                 <div className="w-[94%] lg:w-[82%] mx-auto">
 
                     {/* Heading */}
@@ -580,7 +588,7 @@ const Home = () => {
             </section>
 
             {/* ================= CALL TO ACTION ================= */}
-            <section className="bg-white py-16">
+            <section className="bg-white pt-5 pb-16">
                 <div className="w-[94%] lg:w-[82%] mx-auto">
                     <div className="bg-[#F8FAFC] rounded-3xl px-8 py-14 text-center shadow-sm">
 
@@ -598,177 +606,8 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-            </section>
-            {/* ================= FOOTER ================= */}
-
-            <footer className="relative bg-[#F8FAFC] overflow-hidden">
-
-                {/* WAVE TOP BACKGROUND */}
-                <div className="absolute top-0 left-0 w-full h-[260px] overflow-hidden z-0">
-                    <svg
-                        viewBox="0 0 1440 300"
-                        className="w-full h-full"
-                        preserveAspectRatio="none"
-                    >
-
-                        {/* Blue Top + Bottom Wave */}
-                        <path
-                            fill="#D4E8F5"
-                            d="M0 80 C220 10 420 20 650 80 C900 150 1180 160 1440 70 L1440 180 C1200 260 950 270 720 210 C450 140 220 150 0 230 Z" />
-
-                        {/* Green Inner Wave */}
-                        <path
-                            fill="#DDECC8"
-                            d="M0 110 C250 40 500 50 720 120 C980 200 1200 190 1440 100 L1440 210 C1180 280 950 290 720 230 C450 170 220 180 0 250 Z" />
-                        {/* Footer Background Cut */}
-                        <path
-                            fill="#F8FAFC"
-                            d="M0 220 C280 150 520 160 760 220 C1050 290 1250 270 1440 210 L1440 300 L0 300 Z " />
-                    </svg>
-                </div>
-
-
-                {/* FOOTER CONTENT */}
-                <div className="relative z-10 w-[94%] lg:w-[82%] mx-auto pt-44 lg:pt-[230px] pb-10 ">
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
-                        {/* READY TO POWER */}
-                        <div className="col-span-1">
-
-                            <h2 className="mt-8 text-3xl mt-5 font-bold text-[#0A2D63] leading-tight">
-                                Ready to Power
-                                <br />
-                                <span className="text-[#7BAF2A]">
-                                    Your Mobility?
-                                </span>
-                            </h2>
-
-
-                            <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-                                Let's build a smarter, cleaner and
-                                <br />
-                                more mobility future together.
-                            </p>
-
-                        </div>
-
-                        {/* GET IN TOUCH BUTTON */}
-                       <div className="flex justify-start lg:justify-center">
-                            <button
-                                className="
-                    bg-[#7BAF2A]
-                    text-white
-                    px-6
-                    py-3
-                    rounded-full
-                    flex
-                    items-center
-                    gap-3
-                    hover:bg-[#0A2D63]
-                    transition
-                    shadow-md
-                    "
-                            >
-
-                                Get in Touch
-
-                                <ArrowRight size={18} />
-
-                            </button>
-
-                        </div>
-                        {/* CONTACT DETAILS */}
-                        <div className="space-y-4">
-
-
-                            <div className="flex items-center gap-3">
-
-                                <div className="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center">
-                                    <Headset
-                                        size={18}
-                                        className="text-[#7BAF2A]"
-                                    />
-                                </div>
-
-                                <div>
-                                    <p className="text-xs text-gray-500">
-                                        Call Us
-                                    </p>
-
-                                    <p className="text-sm font-semibold text-[#0A2D63]">
-                                         +91 98765 43210
-                                    </p>
-                                </div>
-
-                            </div>
-                            <div className="flex items-center gap-3">
-
-                                <div className="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center">
-                                    <Cpu
-                                        size={18}
-                                        className="text-[#7BAF2A]"
-                                    />
-                                </div>
-                                <div>
-                                    <p className="text-xs text-gray-500">
-                                        Email
-                                    </p>
-
-                                    <p className="text-sm font-semibold text-[#0A2D63]">
-                                         info@sukalpamobility.com
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-3">
-
-                                <div className="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center">
-                                    <Leaf
-                                        size={18}
-                                        className="text-[#7BAF2A]"
-                                    />
-                                </div>
-                                <div>
-
-                                    <p className="text-xs text-gray-500">
-                                        Location
-                                    </p>
-
-                                    <p className="text-sm font-semibold text-[#0A2D63]">
-                                        Belagavi, Karnataka 590019
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        {/* LOGO */}
-                       <div className="flex justify-start lg:justify-end">
-                            <div className="flex items-center">
-                                <img
-                                    src={logo}
-                                    alt="Sukalpa Logo"
-                                    className="h-20 w-auto"
-                                />
-                                <div className="-ml-2">
-
-                                    <h1 className="text-[34px] font-semibold text-[#0A2D63] leading-none">
-                                        Sukalpa
-                                    </h1>
-
-
-                                    <p className="text-[14px] font-semibold uppercase tracking-wide text-[#7BAF2A]">
-                                        Mobility Services
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </footer>
-    
+            </section>   
+              
         </>
     );
 };

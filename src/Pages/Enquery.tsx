@@ -5,7 +5,7 @@ const Enquiry = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="min-h-screen bg-[#F8FAFC] py-16">
+    <section className="min-h-screen bg-[#F8FAFC] pt-6 pb-16">
       <div className="w-[94%] lg:w-[60%] mx-auto">
 
         <button
