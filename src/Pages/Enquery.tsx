@@ -3,6 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 const Enquiry = () => {
   const navigate = useNavigate();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    alert("Enquiry submitted successfully! We will contact you shortly.");
+
+    // Optional: Reset the form after submission
+    e.currentTarget.reset();
+  };
 
   return (
     <section className="min-h-screen bg-[#F8FAFC] pt-6 pb-16">
@@ -24,8 +32,7 @@ const Enquiry = () => {
 
           <div className="w-16 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
 
-          <form className="space-y-6">
-
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label className="block mb-2 font-medium">Full Name</label>
               <input

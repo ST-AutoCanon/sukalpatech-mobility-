@@ -4,7 +4,9 @@ import Bus from "../assets/Bus.png";
 import { ArrowRight } from "lucide-react";
 import onsitediagnostic from "../assets/on_site_diagnostic.png";
 import homologation from "../assets/homologation.png";
-import operation from "../assets/operations.png";
+import Test1 from "../assets/Test1.png";
+import Test2 from "../assets/Test2.png";
+import Test3 from "../assets/Test3.png";
 import prepost from "../assets/pre_post_production.png";
 import {
     RefreshCw,
@@ -33,6 +35,30 @@ const Home = () => {
             block: "start",
         });
     };
+
+    const testimonials = [
+  {
+    image: Test1,
+    name: "Nat Reynolds",
+    role: "Fleet Operations Manager",
+    review:
+      "Sukalpa Mobility has consistently provided reliable after-sales support. Their technical team responds quickly and keeps our EV fleet running efficiently.",
+  },
+  {
+    image: Test2,
+    name: "Celia Almeida",
+    role: "Service Coordinator",
+    review:
+      "Their engineering expertise and proactive maintenance support have significantly reduced vehicle downtime. The overall service experience has been excellent.",
+  },
+  {
+    image: Test3,
+    name: "Bob Roberts",
+    role: "Technical Manager",
+    review:
+      "From diagnostics to commissioning support, the team delivers professional service with great attention to detail. Highly recommended for EV fleet support.",
+  },
+];
     return (
         <>
             <section
@@ -94,10 +120,9 @@ const Home = () => {
                         </div>
                     </div>
                     {/* Features Card */}
-                </div>
-                </div>
-                 <div
-                        className="mt-[60vh] sm:mt-[55vh] lg:mt-0 pt-6 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-20 w-full lg:w-[80%] bg-white rounded-3xl lg:rounded-full shadow-xl px-5 lg:py-4 py-5 z-20">
+                  </div>
+            </div>
+                 <div className="mt-[60vh] sm:mt-[55vh] lg:mt-0 pt-6 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-20 w-full lg:w-[80%] bg-white rounded-3xl lg:rounded-full shadow-xl px-5 lg:py-4 py-5 z-20">
                             <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
 
                             {/* Item 1 */}
@@ -153,7 +178,8 @@ const Home = () => {
                         </div>
                     </div>
             </section>
-            <section className="pt-20 lg:pt-32 pb-12 bg-white">
+
+           <section className="pt-20 lg:pt-32 pb-12 bg-white">
                <div className="w-[94%] lg:w-[82%] mx-auto lg:pl-8 xl:pl-10">
 
                     <div className="max-w-6xl">
@@ -311,7 +337,7 @@ const Home = () => {
 
                       <div className="space-y-4 flex-grow">
                            {/* Capability Card 1 */}
-                            <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
 
                                 {/* Image */}
                                 <img
@@ -338,7 +364,7 @@ const Home = () => {
 
                             </div>
                             {/* Capability Card 2 */}
-                            <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                                 <img
                                     src={prepost}
                                     className="w-full sm:w-30 h-48 sm:h-25 rounded-xl object-cover"
@@ -364,7 +390,7 @@ const Home = () => {
 
                             </div>
                             {/* Capability Card 3 */}
-                            <div className="bg-white rounded-3xl shadow-md p-4 flex
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex
                               flex-col
                               sm:flex-row
                               items-start
@@ -549,44 +575,69 @@ const Home = () => {
                 </div>
 
             </section>
-            <section className="pt-10 pb-20 bg-white">
-                <div className="w-[94%] lg:w-[82%] mx-auto">
+            
+            <section className="pt-5 pb-10 bg-white">
 
-                    {/* Heading */}
-                    <div className="max-w-4xl mb-12">
-                        <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
-                            Testimonials
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="text-center mb-16">
+
+                        <p className="uppercase tracking-[4px] text-lg font-bold text-gray-500">
+                            TESTIMONIALS
+                        </p>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-3">
+
+                            <span className="text-[#0A2D63]">
+                                What Clients
+                            </span>{" "}
+
+                            <span className="text-[#7BAF2A]">
+                                Say
+                            </span>
+
                         </h2>
 
-                        <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
-                    </div>
-
-                    {/* Testimonial Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
-                            <p className="text-gray-600 leading-7 italic">
-                                "Excellent EV support and quick response."
-                            </p>
-                        </div>
-
-                        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
-                            <p className="text-gray-600 leading-7 italic">
-                                "Professional engineering team."
-                            </p>
-                        </div>
-
-                        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
-                            <p className="text-gray-600 leading-7 italic">
-                                "Reliable after sales partner."
-                            </p>
-                        </div>
+                        <p className="text-gray-600 mt-5 max-w-3xl mx-auto leading-8">
+                            We place huge value on strong relationships and have seen the benefit they bring to our business. Customer feedback is vital in helping us improve our services.
+                        </p>
 
                     </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                        {testimonials.map((item, index) => (
+
+                            <div
+                                key={index}
+                                className="relative bg-[#F8F8F8] rounded-3xl shadow-md px-8 pt-16 pb-8 text-center hover:shadow-xl transition-all duration-300"
+                            >
+
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg absolute left-1/2 -translate-x-1/2 -top-12"
+                                />
+
+                                <p className="text-gray-600 italic leading-7">
+                                    "{item.review}"
+                                </p>
+
+                                <h3 className="mt-8 text-xl font-semibold text-[#0A2D63]">
+                                    {item.name}
+                                </h3>
+
+                                <p className="text-[#7BAF2A] font-medium">
+                                    {item.role}
+                                </p>
+
+                            </div>
+
+                        ))}
+
+                    </div>
                 </div>
             </section>
-
             {/* ================= CALL TO ACTION ================= */}
             <section className="bg-white pt-5 pb-16">
                 <div className="w-[94%] lg:w-[82%] mx-auto">
@@ -607,8 +658,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>   
-              
-        </>
+          </>
     );
 };
 
