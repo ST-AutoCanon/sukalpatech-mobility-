@@ -110,12 +110,12 @@ const Footer = () => {
                 className="h-20 w-auto flex-shrink-0"
               />
 
-              <div>
-                <h1 className="text-[34px] font-semibold text-[#0A2D63] leading-none">
+              <div className="-ml-2 lg:-ml-3">
+                <h1 className="text-2xl sm:text-3xl lg:text-[35px] font-semibold text-[#0A2D63] leading-none">
                   Sukalpa
                 </h1>
 
-                <p className="text-[14px] font-semibold uppercase tracking-wide text-[#7BAF2A]">
+                <p className="text-[10px] sm:text-xs lg:text-[16px] font-semibold uppercase tracking-wide text-[#7BAF2A] leading-none mt-1">
                   Mobility Services
                 </p>
               </div>
