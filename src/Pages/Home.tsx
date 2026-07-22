@@ -37,70 +37,68 @@ const Home = () => {
     };
 
     const testimonials = [
-  {
-    image: Test1,
-    name: "Nat Reynolds",
-    role: "Fleet Operations Manager",
-    review:
-      "Sukalpa Mobility has consistently provided reliable after-sales support. Their technical team responds quickly and keeps our EV fleet running efficiently.",
-  },
-  {
-    image: Test2,
-    name: "Celia Almeida",
-    role: "Service Coordinator",
-    review:
-      "Their engineering expertise and proactive maintenance support have significantly reduced vehicle downtime. The overall service experience has been excellent.",
-  },
-  {
-    image: Test3,
-    name: "Bob Roberts",
-    role: "Technical Manager",
-    review:
-      "From diagnostics to commissioning support, the team delivers professional service with great attention to detail. Highly recommended for EV fleet support.",
-  },
-];
+        {
+            image: Test1,
+            name: "Nat Reynolds",
+            role: "Fleet Operations Manager",
+            review:
+                "Sukalpa Mobility has consistently provided reliable after-sales support. Their technical team responds quickly and keeps our EV fleet running efficiently.",
+        },
+        {
+            image: Test2,
+            name: "Celia Almeida",
+            role: "Service Coordinator",
+            review:
+                "Their engineering expertise and proactive maintenance support have significantly reduced vehicle downtime. The overall service experience has been excellent.",
+        },
+        {
+            image: Test3,
+            name: "Bob Roberts",
+            role: "Technical Manager",
+            review:
+                "From diagnostics to commissioning support, the team delivers professional service with great attention to detail. Highly recommended for EV fleet support.",
+        },
+    ];
     return (
         <>
             <section
                 className="relative w-full min-h-screen lg:min-h-screen bg-cover bg-center"
                 style={{ backgroundImage: `url(${Bus})` }}
             >
-              <div className="relative z-10 w-full h-full flex flex-col">
-                <div className="w-full lg:w-[48%] px-6 sm:px-8 lg:pl-10 xl:pl-16 pt-20 lg:pt-16 pb-12 lg:pb-20 flex flex-col h-full">
-                    <div className="-translate-y-16 sm:-translate-y-12 lg:-translate-y-10">
-                        {/* Tagline */}
+                <div className="relative z-10 w-full h-full flex flex-col">
+                    <div className="w-full lg:w-[42%] xl:w-[40%] px-6 sm:px-8 lg:pl-10 xl:pl-16 pt-20 lg:pt-20 pb-12 lg:pb-20 flex flex-col justify-center">
+                        <div className="-translate-y-16 sm:-translate-y-12 lg:-translate-y-10">
+                            {/* Tagline */}
                             <p className="uppercase tracking-wide text-sm font-semibold mb-5 lg:ml-1">
                                 <span className="text-[#7BAF2A]">
                                     CARE THAT FLOWS WITH YOU.
                                 </span>
                             </p>
 
-                        {/* Heading */}
-                        <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] xl:text-[58px] font-bold leading-[1.1] text-[#0A2D63]">
-                            Powering the
-                            <br />
-                            Future of Mobility.
-                        </h1>
+                            {/* Heading */}
+                            <h1 className="text-[30px] sm:text-[38px] lg:text-[46px] xl:text-[52px] font-bold leading-[1.1] text-[#0A2D63]">
+                                Powering the
+                                <br />
+                                Future of Mobility.
+                            </h1>
 
-                        <h2 className="text-[32px] sm:text-[42px] lg:text-[52px] xl:text-[58px] font-bold leading-[1.1] text-[#7BAF2A]">
-                            Together.
-                        </h2>
-                        {/* Description */}
-                        <p className="mt-5 max-w-[650px] text-base sm:text-lg lg:text-[22px] xl:text-[24px] font-semibold leading-snug text-[#1f2937]">
-                            End-to-End EV After Sales & Lifecycle Support
-                            <br />
-                            for Every Journey.
-                        </p>
-                        {/* Additional Description */}
-                        <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-                            Professional EV diagnostics, field service,
-                            <br />
-                            commissioning, warranty support, and
-                            <br />
-                            technical consulting across India.
-                        </p>
-                        {/* Buttons */}
-                       <div className="flex flex-row sm:flex-row gap-3 mt-8 w-full">
+                            <h2 className="text-[30px] sm:text-[38px] lg:text-[46px] xl:text-[52px] font-bold leading-[1.1] text-[#7BAF2A]">
+                                Together.
+                            </h2>
+                            {/* Description */}
+                            <p className="mt-5 max-w-[500px] text-base sm:text-lg lg:text-xl font-semibold leading-snug text-[#1f2937]">
+                                End-to-End EV After Sales & Lifecycle Support
+                                <br />
+                                for Every Journey.
+                            </p>
+                            {/* Additional Description */}
+                            <p className="mt-6 max-w-[420px] text-sm lg:text-base text-gray-700 leading-7">
+                                Professional EV diagnostics, field service,
+                                commissioning, warranty support, and technical consulting
+                                across India.
+                            </p>
+                            {/* Buttons */}
+                            <div className="flex flex-row sm:flex-row gap-3 mt-8 w-full">
 
                                 <button
                                     onClick={() => navigate("/enquiry")}
@@ -117,88 +115,89 @@ const Home = () => {
                                     <ArrowRight size={18} />
                                 </button>
 
+                            </div>
                         </div>
+                        {/* Features Card */}
                     </div>
-                    {/* Features Card */}
-                  </div>
-            </div>
-                 <div className="mt-[60vh] sm:mt-[55vh] lg:mt-0 pt-6 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-20 w-full lg:w-[80%] bg-white rounded-3xl lg:rounded-full shadow-xl px-5 lg:py-4 py-5 z-20">
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
+                </div>
+                <div className="mt-[60vh] sm:mt-[55vh] lg:mt-0 pt-6 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-16 w-full lg:w-[80%] bg-white rounded-3xl lg:rounded-full shadow-xl px-5 lg:py-4 py-5 z-20">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
 
-                            {/* Item 1 */}
-                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
-                                <RefreshCw className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
+                        {/* Item 1 */}
+                        <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
+                            <RefreshCw className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
 
-                                <div>
-                                    <h3 className="text-2xl font-bold text-[#0A2D63]">360°</h3>
-                                    <p className="text-sm text-gray-600 whitespace-nowrap">
-                                        Lifecycle Support
-                                    </p>
-                                </div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-[#0A2D63]">360°</h3>
+                                <p className="text-sm text-gray-600 whitespace-nowrap">
+                                    Lifecycle Support
+                                </p>
                             </div>
-
-                            {/* Item 2 */}
-                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
-                                <Headset className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
-
-                                <div>
-                                    <h3 className="text-2xl font-bold text-[#0A2D63]">24/7</h3>
-                                    <p className="text-sm text-gray-600 whitespace-nowrap">
-                                        Customer Assistance
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Item 3 */}
-                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
-                                <Users className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
-
-                                <div>
-                                    <h3 className="text-2xl font-bold text-[#0A2D63]">100+</h3>
-                                    <p className="text-sm text-gray-600 whitespace-nowrap">
-                                        Service Network
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Item 4 */}
-                            <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
-                                <Cpu className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
-
-                                <div>
-                                    <h3 className="text-xl font-bold text-[#0A2D63]">
-                                        AI-Powered
-                                    </h3>
-                                    <p className="text-sm text-gray-600 whitespace-nowrap">
-                                        Smart Solutions
-                                    </p>
-                                </div>
-                            </div>
-
                         </div>
+
+                        {/* Item 2 */}
+                        <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
+                            <Headset className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
+
+                            <div>
+                                <h3 className="text-2xl font-bold text-[#0A2D63]">24/7</h3>
+                                <p className="text-sm text-gray-600 whitespace-nowrap">
+                                    Customer Assistance
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Item 3 */}
+                        <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
+                            <Users className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
+
+                            <div>
+                                <h3 className="text-2xl font-bold text-[#0A2D63]">100+</h3>
+                                <p className="text-sm text-gray-600 whitespace-nowrap">
+                                    Service Network
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Item 4 */}
+                        <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
+                            <Cpu className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
+
+                            <div>
+                                <h3 className="text-xl font-bold text-[#0A2D63]">
+                                    AI-Powered
+                                </h3>
+                                <p className="text-sm text-gray-600 whitespace-nowrap">
+                                    Smart Solutions
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
+                </div>
             </section>
 
-           <section className="pt-20 lg:pt-32 pb-12 bg-white">
-               <div className="w-[94%] lg:w-[82%] mx-auto lg:pl-8 xl:pl-10">
-
+            <section className="pt-10 lg:pt-29 pb-12 bg-white">
+                <div className="w-[94%] lg:w-[82%] mx-auto px-8 lg:px-0">
                     <div className="max-w-6xl">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
                             About <span className="text-[#7BAF2A]">Us</span>
                         </h2>
 
-                       <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
-                        <p className="mt-6 text-gray-600 text-lg leading-8 text-left lg:text-justify">
-                            Sukalpa Mobility Services is a leading EV after-sales service provider dedicated
-                            to maximizing vehicle uptime and ensuring reliable fleet performance.
-                        </p>
+                        <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
+                        <div className="mt-6 px-2 lg:px-0 text-gray-600 text-base sm:text-lg leading-7 sm:leading-8 text-left lg:text-justify">
+                            <p>
+                                Sukalpa Mobility Services is a leading EV after-sales service provider dedicated
+                                to maximizing vehicle uptime and ensuring reliable fleet performance.
+                            </p>
 
-                        <p className="mt-6 text-gray-600 text-lg leading-8 text-left lg:text-justify">
-                            With expertise in electric buses, commercial EVs, diagnostics, commissioning,
-                            and technical support, we partner with OEMs and fleet operators to deliver
-                            world-class service solutions across India.
-                        </p>
+                            <p className="mt-6">
+                                With expertise in electric buses, commercial EVs, diagnostics,
+                                commissioning, and technical support, we partner with OEMs and fleet
+                                operators to deliver world-class service solutions across India.
+                            </p>
+                        </div>
                         <button
                             onClick={() => navigate("/about")}
                             className="mt-10 bg-[#0A2D63] hover:bg-[#7BAF2A] transition text-white px-8 py-3 rounded-full"
@@ -215,10 +214,10 @@ const Home = () => {
                 ref={servicesRef}
                 className="bg-white pt-0 pb-16"
             >
-               <div className=" w-[94%] lg:w-[82%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch ">
+                <div className=" w-[94%] lg:w-[82%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch ">
 
                     {/* OUR SERVICES */}
-                   <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
+                    <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
 
                         <p className="text-2xl font-bold tracking-wide uppercase">
                             <span className="text-[#0A2D63]">Our </span>
@@ -231,19 +230,18 @@ const Home = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
                             {/* Card 1 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6">
+                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
                                 {/* Icon + Title */}
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <Package className="w-12 h-12 text-[#7BAF2A] flex-shrink-0" />
 
-                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight">
-                                        SPARE PART <br />
-                                        MANAGEMENT
+                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight min-h-[56px]">
+                                        SPARE PART MANAGEMENT
                                     </h3>
                                 </div>
 
                                 {/* Description */}
-                                <ul className="text-gray-600 text-sm space-y-2">
+                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
                                     <li>• Optimized component lines</li>
                                     <li>• Supply chain efficiency</li>
                                     <li>• Minimized asset standby</li>
@@ -251,17 +249,16 @@ const Home = () => {
                             </div>
 
                             {/* Card 2 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6">
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5">
+                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <Truck className="w-12 h-12 text-[#0A2D63] flex-shrink-0" />
 
                                     <h3 className="font-bold text-[#0A2D63] text-xl leading-tight">
-                                        MOBILE SERVICE <br />
-                                        VEHICLES
+                                        MOBILE SERVICE VEHICLES
                                     </h3>
                                 </div>
 
-                                <ul className="text-gray-600 text-sm space-y-2">
+                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
                                     <li>• Rapid dispatch vans</li>
                                     <li>• Specialized toolkits</li>
                                     <li>• Real-time on-field service</li>
@@ -269,17 +266,16 @@ const Home = () => {
                             </div>
 
                             {/* Card 3 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6">
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5">
+                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <Headset className="w-12 h-12 text-[#7BAF2A] flex-shrink-0" />
 
                                     <h3 className="font-bold text-[#0A2D63] text-xl leading-tight">
-                                        TECHNICAL <br />
-                                        SUPPORT CELL
+                                        TECHNICAL SUPPORT CELL
                                     </h3>
                                 </div>
 
-                                <ul className="text-gray-600 text-sm space-y-2">
+                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
                                     <li className="flex items-start gap-2">
                                         <span>•</span>
                                         <span>Dedicated engineering helpline</span>
@@ -290,17 +286,16 @@ const Home = () => {
                             </div>
 
                             {/* Card 4 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6">
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5">
+                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <BookOpen className="w-12 h-12 text-[#0A2D63] flex-shrink-0" />
 
                                     <h3 className="font-bold text-[#0A2D63] text-xl leading-tight">
-                                        MANUAL,MMI <br />
-                                        & TRAINING
+                                        MANUAL,MMI & TRAINING
                                     </h3>
                                 </div>
 
-                                <ul className="text-gray-600 text-sm space-y-2">
+                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
                                     <li className="flex items-start gap-2">
                                         <span>•</span>
                                         <span>Standard operating procedures</span>
@@ -325,8 +320,8 @@ const Home = () => {
                     </div>
 
                     {/* OUR CAPABILITIES */}
-                   <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
-                    <p className="text-2xl font-bold tracking-wide uppercase">
+                    <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
+                        <p className="text-2xl font-bold tracking-wide uppercase">
                             <span className="text-[#0A2D63]">Our </span>
                             <span className="text-[#7BAF2A]">CAPABILITIES</span>
                         </p>
@@ -335,9 +330,9 @@ const Home = () => {
 
 
 
-                      <div className="space-y-4 flex-grow">
-                           {/* Capability Card 1 */}
-                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                        <div className="space-y-4 flex-grow">
+                            {/* Capability Card 1 */}
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start gap-4 min-h-[170px]">
 
                                 {/* Image */}
                                 <img
@@ -469,7 +464,7 @@ const Home = () => {
 
             { }
 
-           <section className="bg-white pt-8 pb-16">
+            <section className="bg-white pt-8 pb-16">
 
                 <div className="w-[94%] lg:w-[82%] mx-auto">
 
@@ -555,7 +550,7 @@ const Home = () => {
                                 </div>
 
                                 <div>
-                                   
+
 
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
                                         Fast Response Time
@@ -575,7 +570,7 @@ const Home = () => {
                 </div>
 
             </section>
-            
+
             <section className="pt-5 pb-10 bg-white">
 
                 <div className="max-w-7xl mx-auto px-6">
@@ -604,7 +599,7 @@ const Home = () => {
 
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 md:gap-10">
 
                         {testimonials.map((item, index) => (
 
@@ -616,8 +611,7 @@ const Home = () => {
                                 <img
                                     src={item.image}
                                     alt={item.name}
-                                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg absolute left-1/2 -translate-x-1/2 -top-12"
-                                />
+                                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg absolute left-1/2 -translate-x-1/2 -top-8"></img>
 
                                 <p className="text-gray-600 italic leading-7">
                                     "{item.review}"
@@ -657,8 +651,8 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-            </section>   
-          </>
+            </section>
+        </>
     );
 };
 
