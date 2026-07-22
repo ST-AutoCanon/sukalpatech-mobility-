@@ -1,14 +1,18 @@
-import { ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Enquiry = () => {
+
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const navigate = useNavigate();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    alert("Enquiry submitted successfully! We will contact you shortly.");
+    setShowSuccess(true);
 
-    // Optional: Reset the form after submission
     e.currentTarget.reset();
   };
 
@@ -33,6 +37,35 @@ const Enquiry = () => {
           <div className="w-16 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
 
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {showSuccess && (
+              <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
+                <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 text-center animate-[fadeIn_.3s_ease]">
+
+                  <CheckCircle
+                    size={64}
+                    className="mx-auto text-[#7BAF2A] mb-5"
+                  />
+
+                  <h2 className="text-2xl font-bold text-[#0A2D63]">
+                    Enquiry Submitted
+                  </h2>
+
+                  <p className="text-gray-600 mt-3 leading-7">
+                    Thank you for contacting Sukalpa Mobility Services.
+                    <br />
+                    We have received your enquiry and our team will get back to you shortly.
+                  </p>
+
+                  <button
+                    onClick={() => setShowSuccess(false)}
+                    className="mt-8 bg-[#7BAF2A] hover:bg-[#0A2D63] text-white px-8 py-3 rounded-full transition"
+                  >
+                    OK
+                  </button>
+
+                </div>
+              </div>
+            )}
             <div>
               <label className="block mb-2 font-medium">Full Name</label>
               <input
