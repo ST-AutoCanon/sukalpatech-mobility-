@@ -182,14 +182,14 @@ const Capabilities = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-   <section className="bg-white pt-5 pb-16 lg:pt-8 lg:pb-20">
-      <div className="w-[94%] lg:w-[82%] mx-auto">
+   <section className="bg-white pt-6 pb-12 lg:pt-8 lg:pb-20">
+  <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
 
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#0A2D63]">
+       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0A2D63] leading-tight">
           Our <span className="text-[#7BAF2A]">Capabilities</span>
         </h1>
 
-        <div className="w-16 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-10"></div>
+       <div className="w-14 lg:w-16 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8 lg:mb-10"></div>
 
         <div className="space-y-6">
 
@@ -197,77 +197,77 @@ const Capabilities = () => {
 
             <div
               key={index}
-              className="border rounded-2xl overflow-hidden shadow-sm"
+              className="border rounded-xl lg:rounded-2xl overflow-hidden shadow-sm"
             >
 
               <button
                 onClick={() => setOpen(open === index ? null : index)}
-                className="w-full flex justify-between items-center bg-[#0A2D63] text-white px-6 py-5 text-left"
+                className="w-full flex justify-between items-center gap-4 bg-[#0A2D63] text-white px-4 sm:px-6 py-4 lg:py-5 text-left"
               >
-                <h2 className="text-xl lg:text-2xl font-semibold">
+               <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold leading-snug">
                   {item.title}
                 </h2>
 
                 {open === index ? (
-                  <ChevronUp />
+                 <ChevronUp className="w-5 h-5 flex-shrink-0" />
                 ) : (
-                  <ChevronDown />
+                  <ChevronDown className="w-5 h-5 flex-shrink-0" />
                 )}
               </button>
 
               {open === index && (
 
-                <div className="p-8 bg-white">
+                <div className="p-5 sm:p-6 lg:p-8 bg-white">
 
                   {item.description && (
-                    <h3 className="text-2xl font-bold text-[#7BAF2A] mb-4">
+                   <h3 className="text-xl sm:text-2xl font-bold text-[#7BAF2A] mb-4 leading-snug">
                       {item.description}
                     </h3>
                   )}
 
-                  <p className="text-gray-600 leading-8 mb-8 text-justify whitespace-pre-line">
+                 <p className="text-[15px] sm:text-base text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8 text-justify break-words">
                     {item.intro}
                   </p>
 
                   {item.tagline && (
-                    <h3 className="text-2xl font-bold text-[#0A2D63] mb-8">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#0A2D63] mb-6 lg:mb-8">
                       {item.tagline}
                     </h3>
                   )}
 
 
-                  <div className="space-y-8">
+                  <div className="space-y-6 lg:space-y-8">
 
                     {item.sections.map((section, i) => (
 
                       <div key={i}>
 
-                        <h4 className="text-xl font-semibold text-[#0A2D63] mb-4">
+                      <h4 className="text-lg sm:text-xl font-semibold text-[#0A2D63] mb-3 lg:mb-4 leading-snug">
                           {section.heading}
                         </h4>
 
                         {section.tagline && (
-                          <p className="text-gray-600 italic mt-2 mb-3">
+                         <p className="text-sm sm:text-base text-gray-600 italic mt-2 mb-3">
                             {section.tagline}
                           </p>
                         )}
 
                         {section.description && (
-                          <p className="text-gray-600 mt-2 mb-3">
+                         <p className="text-[15px] sm:text-base text-gray-600 mt-2 mb-3 leading-7">
                             {section.description}
                           </p>
                         )}
                         {section.label && (
-                          <h5 className="text-[#7BAF2A] font-semibold mb-3">
+                          <h5 className="text-[#7BAF2A] font-semibold text-sm sm:text-base mb-3">
                             {section.label}
                           </h5>
                         )}
-                        <ul className="grid md:grid-cols-2 gap-3">
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-4">
 
                           {section.points.map((point, j) => (
                             <li
                               key={j}
-                              className="flex items-start gap-2 text-gray-600"
+                              className="flex items-start gap-2 text-[15px] sm:text-base text-gray-600 leading-7"
                             >
                               <span className="text-[#7BAF2A] mt-1">✔</span>
                               {point}

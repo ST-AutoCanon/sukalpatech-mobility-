@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Bus from "../assets/Bus.png";
+import Bus1 from "../assets/Bus1.png";
 import { ArrowRight } from "lucide-react";
 import onsitediagnostic from "../assets/on_site_diagnostic.png";
 import homologation from "../assets/homologation.png";
@@ -61,13 +62,31 @@ const Home = () => {
     ];
     return (
         <>
-            <section
-                className="relative w-full min-h-screen lg:min-h-screen bg-cover bg-center"
-                style={{ backgroundImage: `url(${Bus})` }}
-            >
-                <div className="relative z-10 w-full h-full flex flex-col">
-                    <div className="w-full lg:w-[42%] xl:w-[40%] px-6 sm:px-8 lg:pl-10 xl:pl-16 pt-20 lg:pt-20 pb-12 lg:pb-20 flex flex-col justify-center">
+            <section className="relative w-full min-h-[1300px] lg:min-h-screen overflow-visible">
+
+                {/* Desktop Image */}
+                <img
+                    src={Bus}
+                    alt="Bus"
+                    className="hidden lg:block absolute inset-0 w-full h-full object-cover"
+                />
+
+                {/* Mobile Image */}
+                <img
+                    src={Bus1}
+                    alt="Bus"
+                    className="block lg:hidden absolute inset-0 w-full h-full object-cover"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/10"></div>
+
+                {/* Hero Content */}
+                <div className="relative z-10">
+                    <div className="w-full lg:w-[42%] xl:w-[40%] px-6 sm:px-8 lg:pl-10 xl:pl-16 pt-20 lg:pt-20 pb-12 lg:pb-20">
+
                         <div className="-translate-y-16 sm:-translate-y-12 lg:-translate-y-10">
+
                             {/* Tagline */}
                             <p className="uppercase tracking-wide text-sm font-semibold mb-5 lg:ml-1">
                                 <span className="text-[#7BAF2A]">
@@ -85,23 +104,28 @@ const Home = () => {
                             <h2 className="text-[30px] sm:text-[38px] lg:text-[46px] xl:text-[52px] font-bold leading-[1.1] text-[#7BAF2A]">
                                 Together.
                             </h2>
+
                             {/* Description */}
                             <p className="mt-5 max-w-[500px] text-base sm:text-lg lg:text-xl font-semibold leading-snug text-[#1f2937]">
                                 End-to-End EV After Sales & Lifecycle Support
                                 <br />
                                 for Every Journey.
                             </p>
-                            {/* Additional Description */}
+
                             <p className="mt-6 max-w-[420px] text-sm lg:text-base text-gray-700 leading-7">
                                 Professional EV diagnostics, field service,
                                 commissioning, warranty support, and technical consulting
                                 across India.
                             </p>
+
                             {/* Buttons */}
-                            <div className="flex flex-row sm:flex-row gap-3 mt-8 w-full">
+                            <div className="flex flex-row gap-3 mt-8 w-full">
 
                                 <button
-                                    onClick={() => navigate("/enquiry")}
+                                    onClick={() => {
+                                        navigate("/enquiry");
+                                        window.scrollTo(0, 0);
+                                    }}
                                     className="w-full sm:w-auto bg-[#0A2D63] text-white px-8 py-3 rounded-full hover:bg-[#7BAF2A] transition"
                                 >
                                     Request Services
@@ -116,68 +140,51 @@ const Home = () => {
                                 </button>
 
                             </div>
+
                         </div>
-                        {/* Features Card */}
+
                     </div>
                 </div>
-                <div className="mt-[60vh] sm:mt-[55vh] lg:mt-0 pt-6 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-16 w-full lg:w-[80%] bg-white rounded-3xl lg:rounded-full shadow-xl px-5 lg:py-4 py-5 z-20">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
 
+                {/* Feature Card */}
+                <div
+                    className="relative top-[480px] sm:mt-[420px] md:mt-[460px] lg:absolute lg:top-auto lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-16
+                     w-[99%] lg:w-[80%] mx-auto bg-white rounded-3xl lg:rounded-full shadow-xl px-5 py-5 lg:py-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
                         {/* Item 1 */}
                         <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
-                            <RefreshCw className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
-
-                            <div>
+                            <RefreshCw className="w-10 h-10 text-[#0A2D63] flex-shrink-0" /> <div>
                                 <h3 className="text-2xl font-bold text-[#0A2D63]">360°</h3>
-                                <p className="text-sm text-gray-600 whitespace-nowrap">
-                                    Lifecycle Support
-                                </p>
+                                <p className="text-sm text-gray-600 whitespace-nowrap"> Lifecycle Support </p>
                             </div>
                         </div>
-
                         {/* Item 2 */}
                         <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
                             <Headset className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
-
-                            <div>
-                                <h3 className="text-2xl font-bold text-[#0A2D63]">24/7</h3>
-                                <p className="text-sm text-gray-600 whitespace-nowrap">
-                                    Customer Assistance
-                                </p>
+                            <div> <h3 className="text-2xl font-bold text-[#0A2D63]">24/7</h3>
+                                <p className="text-sm text-gray-600 whitespace-nowrap"> Customer Assistance </p>
                             </div>
                         </div>
-
                         {/* Item 3 */}
                         <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
                             <Users className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
-
-                            <div>
-                                <h3 className="text-2xl font-bold text-[#0A2D63]">100+</h3>
-                                <p className="text-sm text-gray-600 whitespace-nowrap">
-                                    Service Network
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Item 4 */}
+                            <div> <h3 className="text-2xl font-bold text-[#0A2D63]">100+</h3>
+                                <p className="text-sm text-gray-600 whitespace-nowrap"> Service Network </p>
+                            </div> </div> {/* Item 4 */}
                         <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
                             <Cpu className="w-10 h-10 text-[#0A2D63] flex-shrink-0" />
-
                             <div>
-                                <h3 className="text-xl font-bold text-[#0A2D63]">
-                                    AI-Powered
-                                </h3>
-                                <p className="text-sm text-gray-600 whitespace-nowrap">
-                                    Smart Solutions
-                                </p>
+                                <h3 className="text-xl font-bold text-[#0A2D63]"> AI-Powered </h3>
+                                <p className="text-sm text-gray-600 whitespace-nowrap"> Smart Solutions </p>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
+
             </section>
 
-            <section className="pt-10 lg:pt-29 pb-12 bg-white">
+            <section className="pt-24 lg:pt-29 pb-12 bg-white">
                 <div className="w-[94%] lg:w-[82%] mx-auto px-8 lg:px-0">
                     <div className="max-w-6xl">
 
@@ -199,7 +206,10 @@ const Home = () => {
                             </p>
                         </div>
                         <button
-                            onClick={() => navigate("/about")}
+                            onClick={() => {
+                                navigate("/about");
+                                window.scrollTo(0, 0);
+                            }}
                             className="mt-10 bg-[#0A2D63] hover:bg-[#7BAF2A] transition text-white px-8 py-3 rounded-full"
                         >
                             View More
@@ -309,7 +319,10 @@ const Home = () => {
 
                         {/* Button */}
                         <button
-                            onClick={() => navigate("/services")}
+                            onClick={() => {
+                                navigate("/services");
+                                window.scrollTo(0, 0);
+                            }}
                             className="mt-auto pt-8 text-xl font-semibold flex items-center gap-2 group"
                         >
                             <span className="text-[#7BAF2A] group-hover:text-[#0A2D63] transition">
@@ -450,7 +463,10 @@ const Home = () => {
                         </div>
 
                         <button
-                            onClick={() => navigate("/capabilities")}
+                            onClick={() => {
+                                navigate("/capabilities");
+                                window.scrollTo(0, 0);
+                            }}
                             className="mt-auto pt-8 text-xl font-semibold flex items-center gap-2 group"
                         >
                             <span className="text-[#7BAF2A] group-hover:text-[#0A2D63] transition">
@@ -643,7 +659,10 @@ const Home = () => {
                         </h2>
 
                         <button
-                            onClick={() => navigate("/enquiry")}
+                            onClick={() => {
+                                navigate("/enquiry");
+                                window.scrollTo(0, 0);
+                            }}
                             className="mt-8 bg-[#7BAF2A] hover:bg-[#0A2D63] transition text-white px-8 py-3 rounded-full inline-flex items-center gap-2"
                         >
                             Query Form
