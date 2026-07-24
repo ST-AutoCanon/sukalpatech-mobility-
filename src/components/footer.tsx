@@ -31,7 +31,7 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 w-[94%] lg:w-[82%] mx-auto pt-44 lg:pt-[230px] pb-10">
+      <div className="relative z-10 w-[94%] lg:w-[82%] mx-auto pt-50 lg:pt-[230px] pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
           {/* READY TO POWER */}
           <div>
@@ -110,7 +110,7 @@ const Footer = () => {
                 className="h-20 w-auto flex-shrink-0"
               />
 
-              <div className="-ml-2 lg:-ml-3">
+              <div className="-ml-2 lg:-ml-1">
                 <h1 className="text-2xl sm:text-3xl lg:text-[35px] font-semibold text-[#0A2D63] leading-none">
                   Sukalpa
                 </h1>

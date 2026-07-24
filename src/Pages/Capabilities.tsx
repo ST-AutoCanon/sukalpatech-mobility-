@@ -225,7 +225,7 @@ const Capabilities = () => {
                     </h3>
                   )}
 
-                 <p className="text-[15px] sm:text-base text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8 text-justify break-words">
+                  <p className="text-[15px] sm:text-base text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8 text-left break-words">
                     {item.intro}
                   </p>
 

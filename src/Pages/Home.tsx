@@ -1,14 +1,14 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Bus from "../assets/Bus.png";
-import Bus1 from "../assets/Bus1.png";
+import BusSlide from "../assets/busslide.png";
 import { ArrowRight } from "lucide-react";
-import onsitediagnostic from "../assets/on_site_diagnostic.png";
+import onsitediagnostic from "../assets/onsite.png";
 import homologation from "../assets/homologation.png";
 import Test1 from "../assets/Test1.png";
 import Test2 from "../assets/Test2.png";
 import Test3 from "../assets/Test3.png";
-import prepost from "../assets/pre_post_production.png";
+import prepost from "../assets/pre-post.png";
 import {
     RefreshCw,
     Headset,
@@ -39,21 +39,21 @@ const Home = () => {
 
     const testimonials = [
         {
-            image: Test1,
+            image: Test3,
             name: "Nat Reynolds",
             role: "Fleet Operations Manager",
             review:
                 "Sukalpa Mobility has consistently provided reliable after-sales support. Their technical team responds quickly and keeps our EV fleet running efficiently.",
         },
         {
-            image: Test2,
+            image: Test1,
             name: "Celia Almeida",
             role: "Service Coordinator",
             review:
                 "Their engineering expertise and proactive maintenance support have significantly reduced vehicle downtime. The overall service experience has been excellent.",
         },
         {
-            image: Test3,
+            image: Test2,
             name: "Bob Roberts",
             role: "Technical Manager",
             review:
@@ -73,9 +73,9 @@ const Home = () => {
 
                 {/* Mobile Image */}
                 <img
-                    src={Bus1}
+                    src={BusSlide}
                     alt="Bus"
-                    className="block lg:hidden absolute inset-0 w-full h-full object-cover"
+                    className="block lg:hidden absolute inset-0 w-full h-full object-cover object-[10%_center]"
                 />
 
                 {/* Overlay */}
@@ -251,10 +251,10 @@ const Home = () => {
                                 </div>
 
                                 {/* Description */}
-                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
-                                    <li>• Optimized component lines</li>
-                                    <li>• Supply chain efficiency</li>
-                                    <li>• Minimized asset standby</li>
+                                <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
+                                    <li> Optimized component lines</li>
+                                    <li> Supply chain efficiency</li>
+                                    <li> Minimized asset standby</li>
                                 </ul>
                             </div>
 
@@ -268,10 +268,10 @@ const Home = () => {
                                     </h3>
                                 </div>
 
-                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
-                                    <li>• Rapid dispatch vans</li>
-                                    <li>• Specialized toolkits</li>
-                                    <li>• Real-time on-field service</li>
+                                <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
+                                    <li>Rapid dispatch vans</li>
+                                    <li>Specialized toolkits</li>
+                                    <li> Real-time on-field service</li>
                                 </ul>
                             </div>
 
@@ -285,13 +285,10 @@ const Home = () => {
                                     </h3>
                                 </div>
 
-                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
-                                    <li className="flex items-start gap-2">
-                                        <span>•</span>
-                                        <span>Dedicated engineering helpline</span>
-                                    </li>
-                                    <li>• Real-time fault diagnostics</li>
-                                    <li>• 24×7 continuous support</li>
+                                <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
+                                    <li>Dedicated engineering helpline</li>
+                                    <li>Real-time fault diagnostics</li>
+                                    <li>24×7 continuous support</li>
                                 </ul>
                             </div>
 
@@ -305,13 +302,10 @@ const Home = () => {
                                     </h3>
                                 </div>
 
-                                <ul className="text-gray-600 text-sm space-y-2 flex-1">
-                                    <li className="flex items-start gap-2">
-                                        <span>•</span>
-                                        <span>Standard operating procedures</span>
-                                    </li>
-                                    <li>• Workforce training programs</li>
-                                    <li>• Technical manual curation</li>
+                                 <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
+                                    <li>Standard operating procedures</li>
+                                    <li>Workforce training programs</li>
+                                    <li>Technical manual curation</li>
                                 </ul>
                             </div>
                         </div>
@@ -345,29 +339,34 @@ const Home = () => {
 
                         <div className="space-y-4 flex-grow">
                             {/* Capability Card 1 */}
-                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start gap-4 min-h-[170px]">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex
+                              flex-col
+                              sm:flex-row
+                              items-start
+                              sm:items-center
+                                gap-4">
 
-                                {/* Image */}
+
                                 <img
-                                    src={onsitediagnostic}
-                                    className="w-full sm:w-30 h-48 sm:h-25 rounded-xl object-cover"
+                                    src={homologation}
+                                    className="w-full h-48 sm:w-32 sm:h-28 rounded-xl object-cover flex-shrink-0"
                                 />
-
-                                {/* Content */}
                                 <div className="flex-1">
+
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        NEW PROTO DEVELOPMENT
+                                        PRE HOMOLOGATION AND VEHICLE CERTIFICATION
                                     </h3>
 
+
                                     <p className="text-gray-600 text-sm mt-1 leading-relaxed">
-                                        We initiate multi-vehicle audits,in-depth logs of cycle
-                                        evaluations,rapid corrective rapid conimize downtime minimize
-                                        downtime and improve performance
+                                        We provide pre-homologation support for testing and
+                                        certification,ensuring commercial vehicle achieve first-time
+                                        regulatory compliance
                                     </p>
+
                                 </div>
-                                {/* Right Icon */}
                                 <div className="w-10 h-10 rounded-full border border-[#7BAF2A] flex items-center justify-center">
-                                    <MonitorCog className="w-5 h-5 text-[#7BAF2A]" />
+                                    <FileCheck className="w-5 h-5 text-[#7BAF2A]" />
                                 </div>
 
                             </div>
@@ -375,7 +374,8 @@ const Home = () => {
                             <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                                 <img
                                     src={prepost}
-                                    className="w-full sm:w-30 h-48 sm:h-25 rounded-xl object-cover"
+                                    alt="Post Production Services"
+                                   className="w-full h-48 sm:w-32 sm:h-28 rounded-xl object-cover flex-shrink-0"
                                 />
                                 <div className="flex-1">
 
@@ -397,41 +397,29 @@ const Home = () => {
                                 </div>
 
                             </div>
-                            {/* Capability Card 3 */}
-                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex
-                              flex-col
-                              sm:flex-row
-                              items-start
-                              sm:items-center
-                                gap-4">
+                              <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start gap-4 min-h-[170px]">
 
-
+                                {/* Image */}
                                 <img
-                                    src={homologation}
-                                    className="
-                                   w-full
-                                   sm:w-30
-                                   h-48
-                                  sm:h-25
-                                 rounded-xl
-                                object-cover"
+                                    src={onsitediagnostic}
+                                    className="w-full h-48 sm:w-32 sm:h-28 rounded-xl object-cover flex-shrink-0"
                                 />
-                                <div className="flex-1">
 
+                                {/* Content */}
+                                <div className="flex-1">
                                     <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        PRE HOMOLOGATION AND VEHICLE CERTIFICATION
+                                        NEW PROTO DEVELOPMENT
                                     </h3>
 
-
                                     <p className="text-gray-600 text-sm mt-1 leading-relaxed">
-                                        We provide pre-homologation support for testing and
-                                        certification,ensuring commercial vehicle achieve first-time
-                                        regulatory compliance
+                                        We initiate multi-vehicle audits,in-depth logs of cycle
+                                        evaluations,rapid corrective rapid conimize downtime minimize
+                                        downtime and improve performance
                                     </p>
-
                                 </div>
+                                {/* Right Icon */}
                                 <div className="w-10 h-10 rounded-full border border-[#7BAF2A] flex items-center justify-center">
-                                    <FileCheck className="w-5 h-5 text-[#7BAF2A]" />
+                                    <MonitorCog className="w-5 h-5 text-[#7BAF2A]" />
                                 </div>
 
                             </div>
@@ -589,11 +577,10 @@ const Home = () => {
 
             <section className="pt-5 pb-10 bg-white">
 
-                <div className="max-w-7xl mx-auto px-6">
-
+               <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
                     <div className="text-center mb-16">
 
-                        <p className="uppercase tracking-[4px] text-lg font-bold text-gray-500">
+                        <p className="uppercase tracking-[4px] text-lg font-bold text-gray-600">
                             TESTIMONIALS
                         </p>
 
@@ -624,10 +611,13 @@ const Home = () => {
                                 className="relative bg-[#F8F8F8] rounded-3xl shadow-md px-8 pt-16 pb-8 text-center hover:shadow-xl transition-all duration-300"
                             >
 
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg absolute left-1/2 -translate-x-1/2 -top-8"></img>
+                                <div className="absolute left-1/2 -translate-x-1/2 -top-8 w-24 h-24 rounded-full bg-white border-4 border-white shadow-lg overflow-hidden flex items-center justify-center">
+                                    <img
+                                        src={item.image}
+                                        alt={item.name}
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
 
                                 <p className="text-gray-600 italic leading-7">
                                     "{item.review}"
@@ -649,9 +639,9 @@ const Home = () => {
                 </div>
             </section>
             {/* ================= CALL TO ACTION ================= */}
-            <section className="bg-white pt-5 pb-16">
-                <div className="w-[94%] lg:w-[82%] mx-auto">
-                    <div className="bg-[#F8FAFC] rounded-3xl px-8 py-14 text-center shadow-sm">
+            <section className="bg-white pt-5 pb-8 lg:pb-12">
+            <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
+           <div className="bg-[#F8FAFC] rounded-3xl px-8 py-10 lg:py-12 text-center shadow-sm">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
                             Ready to Power
