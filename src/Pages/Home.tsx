@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Bus from "../assets/Bus.png";
-import BusSlide from "../assets/busslide.png";
+import BusSlide from "../assets/MobileBus.png";
 import { ArrowRight } from "lucide-react";
 import onsitediagnostic from "../assets/onsite.png";
 import homologation from "../assets/homologation.png";
@@ -75,7 +75,7 @@ const Home = () => {
                 <img
                     src={BusSlide}
                     alt="Bus"
-                    className="block lg:hidden absolute inset-0 w-full h-full object-cover object-[10%_center]"
+                    className="block lg:hidden absolute inset-0 w-full h-full object-cover object-[1%_center]"
                 />
 
                 {/* Overlay */}
