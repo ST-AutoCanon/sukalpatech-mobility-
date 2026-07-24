@@ -14,11 +14,11 @@ const About = () => {
           Driving the Future of Electric Mobility with Reliable After-Sales Excellence
         </h2>
 
-        <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-justify break-words">
+        <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-left lg:text-justify">
           At Sukalpa Mobility Services, we are committed to delivering reliable,
           efficient, and customer-focused after-sales solutions for the electric
           mobility industry. We specialize in supporting electric buses and
-          commercial EVs throughout their lifecycle, helping OEMs, fleet
+          commercial EVs throughout their lifecycle, helping OEMs,fleet
           operators, and mobility companies maximize vehicle uptime and
           operational efficiency.
         </p>
@@ -31,7 +31,7 @@ const About = () => {
 
           <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-6"></div>
 
-          <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-justify break-words">
+        <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-left lg:text-justify">
             Sukalpa Mobility Services was established with a vision to bridge
             the gap between electric vehicle manufacturers and reliable
             after-sales support. As the EV industry continues to grow rapidly,
@@ -39,7 +39,7 @@ const About = () => {
             than ever.
           </p>
 
-          <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-justify break-words">
+         <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-left lg:text-justify">
             With extensive experience working on electric bus projects across
             India, our team understands the challenges faced by OEMs and fleet
             operators. We combine engineering expertise with field service
@@ -47,7 +47,7 @@ const About = () => {
             lifecycle.
           </p>
 
-          <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-justify break-words">
+        <p className="mt-3 text-gray-600 text-[15px] sm:text-base leading-7 lg:leading-8 text-left lg:text-justify">
             Today, Sukalpa Mobility Services serves as a trusted technical
             partner, helping customers improve vehicle reliability, reduce
             downtime, and enhance operational performance.
