@@ -74,8 +74,8 @@ const Home = () => {
                 {/* Mobile Image */}
                 <img
                     src={BusSlide}
-                    alt="Bus"
-                    className="block lg:hidden absolute inset-0 w-full h-full object-cover object-[1%_center]"
+                    alt="Sukalpa Mobility"
+                    className="block lg:hidden absolute inset-0 w-full h-full object-cover object-fill"
                 />
 
                 {/* Overlay */}
@@ -302,7 +302,7 @@ const Home = () => {
                                     </h3>
                                 </div>
 
-                                 <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
+                                <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
                                     <li>Standard operating procedures</li>
                                     <li>Workforce training programs</li>
                                     <li>Technical manual curation</li>
@@ -338,7 +338,35 @@ const Home = () => {
 
 
                         <div className="space-y-4 flex-grow">
+
+
                             {/* Capability Card 1 */}
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start gap-4 min-h-[170px]">
+
+                                {/* Image */}
+                                <img
+                                    src={onsitediagnostic}
+                                    className="w-full h-48 sm:w-32 sm:h-28 rounded-xl object-cover flex-shrink-0"
+                                />
+
+                                {/* Content */}
+                                <div className="flex-1">
+                                    <h3 className="font-bold text-[#0A2D63] text-lg">
+                                        NEW PROTO DEVELOPMENT
+                                    </h3>
+
+                                    <p className="text-gray-600 text-sm mt-1 leading-relaxed">
+                                        We initiate multi-vehicle audits,in-depth logs of cycle
+                                        evaluations,rapid corrective rapid conimize downtime minimize
+                                        downtime and improve performance
+                                    </p>
+                                </div>
+                                {/* Right Icon */}
+                                <div className="w-10 h-10 rounded-full border border-[#7BAF2A] flex items-center justify-center">
+                                    <MonitorCog className="w-5 h-5 text-[#7BAF2A]" />
+                                </div>
+
+                            </div>
                             <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex
                               flex-col
                               sm:flex-row
@@ -375,7 +403,7 @@ const Home = () => {
                                 <img
                                     src={prepost}
                                     alt="Post Production Services"
-                                   className="w-full h-48 sm:w-32 sm:h-28 rounded-xl object-cover flex-shrink-0"
+                                    className="w-full h-48 sm:w-32 sm:h-28 rounded-xl object-cover flex-shrink-0"
                                 />
                                 <div className="flex-1">
 
@@ -397,57 +425,6 @@ const Home = () => {
                                 </div>
 
                             </div>
-                              <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start gap-4 min-h-[170px]">
-
-                                {/* Image */}
-                                <img
-                                    src={onsitediagnostic}
-                                    className="w-full h-48 sm:w-32 sm:h-28 rounded-xl object-cover flex-shrink-0"
-                                />
-
-                                {/* Content */}
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        NEW PROTO DEVELOPMENT
-                                    </h3>
-
-                                    <p className="text-gray-600 text-sm mt-1 leading-relaxed">
-                                        We initiate multi-vehicle audits,in-depth logs of cycle
-                                        evaluations,rapid corrective rapid conimize downtime minimize
-                                        downtime and improve performance
-                                    </p>
-                                </div>
-                                {/* Right Icon */}
-                                <div className="w-10 h-10 rounded-full border border-[#7BAF2A] flex items-center justify-center">
-                                    <MonitorCog className="w-5 h-5 text-[#7BAF2A]" />
-                                </div>
-
-                            </div>
-                            {/* Capability Card 4 */}
-                            {/* <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-
-                                <img
-                                    src={operation}
-                                    className="w-full sm:w-30 h-48 sm:h-25 rounded-xl object-cover"
-                                    alt="Operations"
-                                />
-
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-[#0A2D63] text-lg">
-                                        OPERATIONS
-                                    </h3>
-
-                                    <p className="text-gray-600 text-sm mt-1 leading-relaxed">
-                                        We build sustainable partnerships by delivering
-                                        precise, data-driven maintenance that optimizes
-                                        vehicle lifespan and ensures peak fleet performance.
-                                    </p>
-                                </div>
-
-                                <div className="w-10 h-10 rounded-full border border-[#7BAF2A] flex items-center justify-center">
-                                    <Users className="w-5 h-5 text-[#0A2D63]" />
-                                </div>
-                            </div> */}
                         </div>
 
                         <button
@@ -577,7 +554,7 @@ const Home = () => {
 
             <section className="pt-5 pb-10 bg-white">
 
-               <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
+                <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
                     <div className="text-center mb-16">
 
                         <p className="uppercase tracking-[4px] text-lg font-bold text-gray-600">
@@ -639,9 +616,9 @@ const Home = () => {
                 </div>
             </section>
             {/* ================= CALL TO ACTION ================= */}
-            <section className="bg-white pt-5 pb-8 lg:pb-12">
-            <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
-           <div className="bg-[#F8FAFC] rounded-3xl px-8 py-10 lg:py-12 text-center shadow-sm">
+            <section className="bg-white pt-8 pb-8 lg:pt-12 lg:pb-12">
+                <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
+                    <div className="bg-[#F8FAFC] rounded-3xl px-8 py-10 lg:py-12 text-center shadow-sm">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
                             Ready to Power

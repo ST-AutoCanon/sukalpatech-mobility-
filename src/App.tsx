@@ -4,8 +4,10 @@ import Home from "./Pages/Home";
 import About from "./Pages/Aboutus";
 import Enquiry from "./Pages/Enquery";
 import Services from "./Pages/Services";
+import NewProtoDevelopment from "./Pages/Capabilities/NewProtodev";
+import PreHomologation from "./Pages/Capabilities/PreHomologation";
+import PostProduction from "./Pages/Capabilities/Postprod";
 import Capabilities from "./Pages/Capabilities";
-import Products from "./Pages/Products";
 import Footer from "./components/footer";
 
 function App() {
@@ -15,12 +17,24 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-         <Route path="/services" element={<Services />} />
-         <Route path="/capabilities" element={<Capabilities />} />
-         <Route path="/products" element={<Products />} />
-        <Route path="/enquiry" element={<Enquiry />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/capabilities" element={<Capabilities />} />
+        <Route
+          path="/capabilities/new-proto-development"
+          element={<NewProtoDevelopment />}
+        />
+
+        <Route
+          path="/capabilities/pre-homologation"
+          element={<PreHomologation />}
+        />
+
+        <Route
+          path="/capabilities/post-production"
+          element={<PostProduction />}
+        />          <Route path="/enquiry" element={<Enquiry />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }
