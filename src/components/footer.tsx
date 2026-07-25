@@ -31,7 +31,7 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 w-[94%] lg:w-[82%] mx-auto pt-50 lg:pt-[230px] pb-10">
+      <div className="relative z-10 w-[94%] lg:w-[82%] mx-auto pt-55 lg:pt-[230px] pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
           {/* READY TO POWER */}
           <div>
