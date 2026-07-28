@@ -26,6 +26,7 @@ import {
 
 
 const Home = () => {
+    const [showCapabilitiesDropdown, setShowCapabilitiesDropdown] = useState(false);
 
     const servicesRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
