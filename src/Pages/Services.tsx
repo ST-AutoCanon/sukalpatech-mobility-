@@ -202,7 +202,7 @@ const Services = () => {
   return (
     <section className="bg-[#F8FAFC]">
       {/* Hero Section */}
-      <div className="bg-[#0A2D63] text-white py-20 px-6">
+      <div className="bg-[#0A2D63] text-white py-10 px-6">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h1 className="text-4xl md:text-5xl font-bold">
             Spare Parts Management
