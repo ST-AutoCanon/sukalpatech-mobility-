@@ -61,63 +61,43 @@ const Technicalsupport = () => {
           </p>
         </div>
 
-       <div className="space-y-20 mt-16">
-  {technicalSupportServices.map((service, index) => {
-    const isEven = index % 2 === 0;
-
-    return (
+      <div className="space-y-20 mt-16">
+  {technicalSupportServices.map((service, index) => (
+    <div
+      key={index}
+      className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+    >
+      {/* Image */}
       <div
-        key={index}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        className={`flex justify-center ${
+          index % 2 === 0
+            ? "lg:order-2 lg:justify-end"
+            : "lg:order-1 lg:justify-start"
+        } order-1`}
       >
-        {isEven ? (
-          <>
-            {/* Left Content */}
-            <div>
-              <h3 className="text-3xl font-bold text-[#0A2D63] mb-5">
-                {service.title}
-              </h3>
-
-              <p className="text-lg leading-8 text-gray-600">
-                {service.description}
-              </p>
-            </div>
-
-            {/* Right Image */}
-            <div className="flex justify-center lg:justify-end">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full max-w-[450px] h-[280px] object-cover rounded-2xl shadow-lg"
-              />
-            </div>
-          </>
-        ) : (
-          <>
-            {/* Left Image */}
-            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full max-w-[450px] h-[280px] object-cover rounded-2xl shadow-lg"
-              />
-            </div>
-
-            {/* Right Content */}
-            <div className="order-1 lg:order-2">
-              <h3 className="text-3xl font-bold text-[#0A2D63] mb-5">
-                {service.title}
-              </h3>
-
-              <p className="text-lg leading-8 text-gray-600">
-                {service.description}
-              </p>
-            </div>
-          </>
-        )}
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full max-w-[450px] h-[240px] md:h-[280px] object-cover rounded-2xl shadow-lg"
+        />
       </div>
-    );
-  })}
+
+      {/* Content */}
+      <div
+        className={`${
+          index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+        } order-2`}
+      >
+        <h3 className="text-2xl md:text-3xl font-bold text-[#0A2D63] mb-5">
+          {service.title}
+        </h3>
+
+        <p className="text-base md:text-lg leading-7 md:leading-8 text-gray-600">
+          {service.description}
+        </p>
+      </div>
+    </div>
+  ))}
 </div>
       </div>
     </div>

@@ -155,83 +155,54 @@ const Technicaldoc = () => {
             <div className="w-20 h-1 bg-[#7BAF2A]  mt-4 rounded-full"></div>
           </div>
 
-          <div className="space-y-20">
+       <div className="space-y-20">
   {documentationServices.map((service, index) => (
     <div
       key={index}
-      className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
     >
-      {index % 2 === 0 ? (
-        <>
-          {/* Left Image */}
-          <div className="flex justify-center lg:justify-start">
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-full max-w-[500px] h-[330px] object-cover rounded-2xl shadow-lg"
-            />
-          </div>
+      {/* Image */}
+      <div
+        className={`flex justify-center ${
+          index % 2 === 0
+            ? "lg:order-1 lg:justify-start"
+            : "lg:order-2 lg:justify-end"
+        } order-1`}
+      >
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full max-w-[500px] h-[250px] md:h-[330px] object-cover rounded-2xl shadow-lg"
+        />
+      </div>
 
-          {/* Right Content */}
-          <div>
-            <h3 className="text-3xl font-bold text-[#0A2D63] mb-4">
-              {service.title}
-            </h3>
+      {/* Content */}
+      <div
+        className={`${
+          index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+        } order-2`}
+      >
+        <h3 className="text-2xl md:text-3xl font-bold text-[#0A2D63] mb-4">
+          {service.title}
+        </h3>
 
-            <p className="text-lg text-gray-600 leading-8 mb-6">
-              {service.description}
-            </p>
+        <p className="text-base md:text-lg text-gray-600 leading-7 md:leading-8 mb-6">
+          {service.description}
+        </p>
 
-            <h4 className="text-xl font-semibold text-[#0A2D63] mb-4">
-              Includes:
-            </h4>
+        <h4 className="text-lg md:text-xl font-semibold text-[#0A2D63] mb-4">
+          Includes:
+        </h4>
 
-            <ul className="space-y-3">
-              {service.includes.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="mt-2 w-2 h-2 rounded-full bg-[#7BAF2A] flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-7">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : (
-        <>
-          {/* Left Content */}
-          <div>
-            <h3 className="text-3xl font-bold text-[#0A2D63] mb-4">
-              {service.title}
-            </h3>
-
-            <p className="text-lg text-gray-600 leading-8 mb-6">
-              {service.description}
-            </p>
-
-            <h4 className="text-xl font-semibold text-[#0A2D63] mb-4">
-              Includes:
-            </h4>
-
-            <ul className="space-y-3">
-              {service.includes.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="mt-2 w-2 h-2 rounded-full bg-[#7BAF2A] flex-shrink-0"></span>
-                  <span className="text-gray-700 leading-7">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Right Image */}
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-full max-w-[500px] h-[330px] object-cover rounded-2xl shadow-lg"
-            />
-          </div>
-        </>
-      )}
+        <ul className="space-y-3">
+          {service.includes.map((item, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <span className="mt-2 w-2 h-2 rounded-full bg-[#7BAF2A] flex-shrink-0"></span>
+              <span className="text-gray-700 leading-7">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   ))}
 </div>
