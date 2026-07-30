@@ -60,7 +60,7 @@ const Sparepartservices = () => {
   return (
     <section className="bg-[#F8FAFC]">
       {/* Hero Section */}
-      <div className="pt-10 pb-20 px-6">
+      <div className="pt-10 pb-10 lg:pb-12 px-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-[#0A2D63]">
             Spare Parts Management
@@ -84,7 +84,7 @@ const Sparepartservices = () => {
       </div>
 
       {/* Spare Parts Services */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 py-10 lg:py-12">
         <div className="text-left mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0A2D63]">
             Our Spare Parts Services
@@ -93,60 +93,42 @@ const Sparepartservices = () => {
           <div className="w-24 h-1 bg-[#7BAF2A] mt-4 rounded-full"></div>
         </div>
 
-        <div className="space-y-20">
-          {sparePartsServices.map((service, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-            >
-              {index % 2 === 0 ? (
-                <>
-                  {/* Left Content */}
-                  <div>
-                    <h3 className="text-3xl font-bold text-[#0A2D63] mb-5">
-                      {service.title}
-                    </h3>
+       <div className="space-y-20">
+  {sparePartsServices.map((service, index) => (
+    <div
+      key={index}
+      className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+    >
+      {/* Image */}
+      <div
+        className={`flex justify-center ${
+          index % 2 === 0 ? "lg:order-2 lg:justify-end" : "lg:order-1 lg:justify-start"
+        } order-1`}
+      >
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full max-w-[420px] h-[240px] md:h-[260px] object-cover rounded-2xl shadow-lg"
+        />
+      </div>
 
-                    <p className="text-lg leading-8 text-gray-600">
-                      {service.description}
-                    </p>
-                  </div>
+      {/* Content */}
+      <div
+        className={`${
+          index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+        } order-2`}
+      >
+        <h3 className="text-2xl md:text-3xl font-bold text-[#0A2D63] mb-5">
+          {service.title}
+        </h3>
 
-                  {/* Right Image */}
-                  <div className="flex justify-center lg:justify-end">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full max-w-[420px] h-[260px] object-cover rounded-2xl shadow-lg"
-                    />
-                  </div>
-                </>
-              ) : (
-                <>
-                  {/* Left Image */}
-                  <div className="flex justify-center lg:justify-start">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full max-w-[420px] h-[260px] object-cover rounded-2xl shadow-lg"
-                    />
-                  </div>
-
-                  {/* Right Content */}
-                  <div>
-                    <h3 className="text-3xl font-bold text-[#0A2D63] mb-5">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-lg leading-8 text-gray-600">
-                      {service.description}
-                    </p>
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
+        <p className="text-base md:text-lg leading-7 md:leading-8 text-gray-600">
+          {service.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
 
       {/* Spare Parts Process */}
