@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import emailjs from "emailjs-com";
 
 const Enquiry = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+  });
 
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -11,9 +19,49 @@ const Enquiry = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setShowSuccess(true);
+    const templateParams = {
+      full_name: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      message: formData.message,
+      time: new Date().toLocaleString(),
+    };
 
-    e.currentTarget.reset();
+    emailjs
+      .send(
+        "service_rgv58wa",
+        "template_se8atuo",
+        templateParams,
+        "MTAnQRgr1M_DqWtX4"
+      )
+      .then(
+        () => {
+          setShowSuccess(true);
+
+          setFormData({
+            fullName: "",
+            email: "",
+            phone: "",
+            company: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error(error);
+          alert("Failed to send enquiry");
+        }
+      );
+  };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   return (
@@ -70,8 +118,11 @@ const Enquiry = () => {
               <label className="block mb-2 font-medium">Full Name</label>
               <input
                 type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full border rounded-xl px-4 py-3 outline-none focus:border-[#7BAF2A]"
+                className="w-full border rounded-xl px-4 py-3"
               />
             </div>
 
@@ -79,17 +130,23 @@ const Enquiry = () => {
               <label className="block mb-2 font-medium">Email</label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full border rounded-xl px-4 py-3 outline-none focus:border-[#7BAF2A]"
+                className="w-full border rounded-xl px-4 py-3"
               />
             </div>
 
             <div>
               <label className="block mb-2 font-medium">Phone Number</label>
               <input
-                type="tel"
-                placeholder="Enter phone number"
-                className="w-full border rounded-xl px-4 py-3 outline-none focus:border-[#7BAF2A]"
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Enter your phone no"
+                className="w-full border rounded-xl px-4 py-3"
               />
             </div>
 
@@ -97,15 +154,21 @@ const Enquiry = () => {
               <label className="block mb-2 font-medium">Company</label>
               <input
                 type="text"
-                placeholder="Company Name"
-                className="w-full border rounded-xl px-4 py-3 outline-none focus:border-[#7BAF2A]"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                placeholder="Enter your company"
+                className="w-full border rounded-xl px-4 py-3"
               />
             </div>
 
             <div>
               <label className="block mb-2 font-medium">Message</label>
               <textarea
+                name="message"
                 rows={5}
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Write your enquiry..."
                 className="w-full border rounded-xl px-4 py-3 outline-none focus:border-[#7BAF2A]"
               ></textarea>

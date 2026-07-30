@@ -6,11 +6,12 @@ import logo from "../assets/image1.png";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [capabilitiesOpen, setCapabilitiesOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
+    { name: "Careers", path: "/careers" },
     { name: "Contact Us", path: "/enquiry" },
   ];
 
@@ -62,6 +63,53 @@ const Header = () => {
               )}
             </NavLink>
           ))}
+
+
+{/* Services Dropdown */}
+<div className="relative">
+  <button
+    onClick={() => setServicesOpen(!servicesOpen)}
+    className="flex items-center gap-1 text-gray-700 hover:text-green-600 py-2"
+  >
+    Services
+    <ChevronDown
+      size={18}
+      className={`transition-transform ${
+        servicesOpen ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {servicesOpen && (
+    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50">
+
+      <Link
+        to="/services/spare-parts"
+        onClick={() => setServicesOpen(false)}
+        className="block px-5 py-4 hover:bg-[#0A2D63] hover:text-white"
+      >
+        Spare Parts Management
+      </Link>
+
+      <Link
+        to="/services/technical-support"
+        onClick={() => setServicesOpen(false)}
+        className="block px-5 py-4 border-t hover:bg-[#0A2D63] hover:text-white"
+      >
+        Technical Support
+      </Link>
+
+      <Link
+        to="/services/technical-documentation"
+        onClick={() => setServicesOpen(false)}
+        className="block px-5 py-4 border-t hover:bg-[#0A2D63] hover:text-white"
+      >
+        Technical Documentation
+      </Link>
+
+    </div>
+  )}
+</div>
 
           <div className="relative">
             <button
@@ -140,83 +188,137 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white border-t shadow-md">
-          <div className="flex flex-col py-2">
-            {navItems.map((item) => (
-              <div key={item.name}>
-                <NavLink
-                  to={item.path}
-                  end={item.path === "/"}
-                  onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `block px-6 py-4 font-semibold ${isActive
-                      ? "text-green-600 bg-gray-50"
-                      : "text-gray-700"
-                    }`
-                  }
-                >
-                  {item.name}
-                </NavLink>
+  <div className="lg:hidden bg-white border-t shadow-md">
+    <div className="flex flex-col py-2">
 
-                {/* Show Capabilities after Services */}
-                {item.name === "Services" && (
-                  <div>
-                    <button
-                      onClick={() => setCapabilitiesOpen(!capabilitiesOpen)}
-                      className="w-full flex justify-between items-center px-6 py-4 font-semibold text-gray-700"
-                    >
-                      Capabilities
-                      <ChevronDown
-                        size={18}
-                        className={`transition-transform duration-200 ${capabilitiesOpen ? "rotate-180" : ""
-                          }`}
-                      />
-                    </button>
+      {/* Home, About, Contact */}
+      {navItems.map((item) => (
+        <NavLink
+          key={item.name}
+          to={item.path}
+          end={item.path === "/"}
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) =>
+            `block px-6 py-4 font-semibold ${
+              isActive
+                ? "text-green-600 bg-gray-50"
+                : "text-gray-700"
+            }`
+          }
+        >
+          {item.name}
+        </NavLink>
+      ))}
 
-                    {capabilitiesOpen && (
-                      <div className="bg-gray-50">
-                        <Link
-                          to="/capabilities/new-proto-development"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setCapabilitiesOpen(false);
-                          }}
-                          className="block px-10 py-3 text-gray-700 hover:bg-gray-100"
-                        >
-                          New Proto Dev
-                        </Link>
+      {/* Services */}
+      <div>
+        <button
+          onClick={() => setServicesOpen(!servicesOpen)}
+          className="w-full flex justify-between items-center px-6 py-4 font-semibold text-gray-700"
+        >
+          Services
+          <ChevronDown
+            size={18}
+            className={`transition-transform ${
+              servicesOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
-                        <Link
-                          to="/capabilities/pre-homologation"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setCapabilitiesOpen(false);
-                          }}
-                          className="block px-10 py-3 text-gray-700 hover:bg-gray-100"
-                        >
-                          Pre Homologation
-                        </Link>
+        {servicesOpen && (
+          <div className="bg-gray-50">
+            <Link
+              to="/services/spare-parts"
+              onClick={() => {
+                setMenuOpen(false);
+                setServicesOpen(false);
+              }}
+              className="block px-10 py-3 hover:bg-gray-100"
+            >
+              Spare Parts Management
+            </Link>
 
-                        <Link
-                          to="/capabilities/post-production"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setCapabilitiesOpen(false);
-                          }}
-                          className="block px-10 py-3 text-gray-700 hover:bg-gray-100"
-                        >
-                          Post Production
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
+            <Link
+              to="/services/technical-support"
+              onClick={() => {
+                setMenuOpen(false);
+                setServicesOpen(false);
+              }}
+              className="block px-10 py-3 hover:bg-gray-100"
+            >
+              Technical Support
+            </Link>
+
+            <Link
+              to="/services/technical-documentation"
+              onClick={() => {
+                setMenuOpen(false);
+                setServicesOpen(false);
+              }}
+              className="block px-10 py-3 hover:bg-gray-100"
+            >
+              Technical Documentation
+            </Link>
           </div>
+        )}
+      </div>
 
-        </div>
-      )}
+      {/* Capabilities */}
+      <div>
+        <button
+          onClick={() => setCapabilitiesOpen(!capabilitiesOpen)}
+          className="w-full flex justify-between items-center px-6 py-4 font-semibold text-gray-700"
+        >
+          Capabilities
+          <ChevronDown
+            size={18}
+            className={`transition-transform ${
+              capabilitiesOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {capabilitiesOpen && (
+          <div className="bg-gray-50">
+            <Link
+              to="/capabilities/new-proto-development"
+              onClick={() => {
+                setMenuOpen(false);
+                setCapabilitiesOpen(false);
+              }}
+              className="block px-10 py-3 hover:bg-gray-100"
+            >
+              New Proto Development
+            </Link>
+
+            <Link
+              to="/capabilities/pre-homologation"
+              onClick={() => {
+                setMenuOpen(false);
+                setCapabilitiesOpen(false);
+              }}
+              className="block px-10 py-3 hover:bg-gray-100"
+            >
+              Pre Homologation
+            </Link>
+
+            <Link
+              to="/capabilities/post-production"
+              onClick={() => {
+                setMenuOpen(false);
+                setCapabilitiesOpen(false);
+              }}
+              className="block px-10 py-3 hover:bg-gray-100"
+            >
+              Post Production
+            </Link>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+)}
     </header>
   );
 };

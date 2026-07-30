@@ -315,8 +315,11 @@ const Home = () => {
                         {/* Button */}
                         <button
                             onClick={() => {
-                                navigate("/services");
-                                window.scrollTo(0, 0);
+                                navigate("/services/spare-parts");
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: "smooth",
+                                });
                             }}
                             className="mt-auto pt-8 text-xl font-semibold flex items-center gap-2 group"
                         >
