@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const Enquiry = () => {
   const [formData, setFormData] = useState({
@@ -16,43 +16,54 @@ const Enquiry = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  console.log(import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
 
-    const templateParams = {
-      full_name: formData.fullName,
-      email: formData.email,
-      phone: formData.phone,
-      company: formData.company,
-      message: formData.message,
-      time: new Date().toLocaleString(),
-    };
+  const form = new FormData();
 
-    emailjs
-      .send(
-        "service_rgv58wa",
-        "template_se8atuo",
-        templateParams,
-        "MTAnQRgr1M_DqWtX4"
-      )
-      .then(
-        () => {
-          setShowSuccess(true);
+  form.append(
+    "access_key",
+    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+  );
 
-          setFormData({
-            fullName: "",
-            email: "",
-            phone: "",
-            company: "",
-            message: "",
-          });
-        },
-        (error) => {
-          console.error(error);
-          alert("Failed to send enquiry");
-        }
-      );
-  };
+  form.append("full_name", formData.fullName);
+  form.append("email", formData.email);
+  form.append("phone", formData.phone);
+  form.append("company", formData.company);
+  form.append("message", formData.message);
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: form,
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    await emailjs.send(
+  "service_rgv58wa",
+  "template_zycwdr5",
+  {
+    to_email: formData.email,
+    full_name: `${formData.fullName}`,
+  },
+  "MTAnQRgr1M_DqWtX4"
+);
+    setShowSuccess(true);
+
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: "",
+    });
+  } else {
+    console.error(result);
+    alert("Failed to send enquiry");
+  }
+};
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {

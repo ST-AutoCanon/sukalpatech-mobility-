@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Careers = () => {
     const [successMessage, setSuccessMessage] = useState("");
@@ -6,6 +7,7 @@ const Careers = () => {
         firstName: "",
         lastName: "",
         qualification: "",
+        email: "",
         resume: null as File | null,
     });
 
@@ -28,34 +30,66 @@ const Careers = () => {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  console.log(import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
 
-        console.log(formData);
+  const form = new FormData();
 
-        // Show success message
-        setSuccessMessage("Your application has been submitted successfully!");
+  form.append(
+    "access_key",
+    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+  );
 
-        // Optional: Clear the form
-        setFormData({
-            firstName: "",
-            lastName: "",
-            qualification: "",
-            resume: null,
-        });
+  form.append("first_name", formData.firstName);
+  form.append("last_name", formData.lastName);
+  form.append("email", formData.email);
+  form.append("qualification", formData.qualification);
 
-        // Hide message after 4 seconds
-        setTimeout(() => {
-            setSuccessMessage("");
-        }, 4000);
-    };
+//   if (formData.resume) {
+//     form.append("resume", formData.resume);
+//   }
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: form,
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    await emailjs.send(
+  "service_rgv58wa",
+  "template_zycwdr5", // Auto Reply Template
+  {
+    to_email: formData.email,
+    full_name: formData.firstName,
+  },
+  "MTAnQRgr1M_DqWtX4"
+);
+    setSuccessMessage("Your application has been submitted successfully!");
+
+    setFormData({
+      firstName: "",
+      lastName: "",
+      qualification: "",
+      email: "",
+      resume: null,
+    });
+
+    setTimeout(() => setSuccessMessage(""), 4000);
+  } else {
+    console.error(result);
+    alert("Failed to submit application");
+  }
+};
 
     return (
         <section className="py-10 lg:py-16 px-4 sm:px-6">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
 
                 {/* Left Section */}
-                <div className="lg:w-1/2 pt-0 lg:pt-12">
+                <div className="lg:w-1/2 mt-2">
                     <div>
                         <h2 className="text-3xl sm:text-4xl font-bold text-[#0A2D63]">
                             Join Our Team
@@ -151,6 +185,22 @@ const Careers = () => {
                                 <option>MBA</option>
                                 <option>Other</option>
                             </select>
+                        </div>
+
+                        <div>
+                            <label className="block font-medium mb-2">
+                                Email <span className="text-red-500">*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#7BAF2A]"
+                                required
+                            />
                         </div>
 
                         <div>

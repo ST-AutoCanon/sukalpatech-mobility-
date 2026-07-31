@@ -67,7 +67,10 @@ const Header = () => {
           {/* Services Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setServicesOpen(!servicesOpen)}
+              onClick={() => {
+                setServicesOpen((prev) => !prev);
+                setCapabilitiesOpen(false);
+              }}
               className="flex items-center gap-1 text-gray-700 hover:text-green-600 py-2"
             >
               Services
@@ -111,7 +114,10 @@ const Header = () => {
 
           <div className="relative">
             <button
-              onClick={() => setCapabilitiesOpen(!capabilitiesOpen)}
+              onClick={() => {
+                setCapabilitiesOpen((prev) => !prev);
+                setServicesOpen(false);
+              }}
               className="flex items-center gap-1 text-gray-700 hover:text-green-600 py-2"
             >
               Capabilities
@@ -229,7 +235,10 @@ const Header = () => {
             {/* Services */}
             <div>
               <button
-                onClick={() => setServicesOpen(!servicesOpen)}
+                onClick={() => {
+                  setServicesOpen((prev) => !prev);
+                  setCapabilitiesOpen(false);
+                }}
                 className="w-full flex justify-between items-center px-6 py-4 font-semibold text-gray-700"
               >
                 Services
@@ -281,7 +290,10 @@ const Header = () => {
             {/* Capabilities */}
             <div>
               <button
-                onClick={() => setCapabilitiesOpen(!capabilitiesOpen)}
+                onClick={() => {
+                  setCapabilitiesOpen((prev) => !prev);
+                  setServicesOpen(false);
+                }}
                 className="w-full flex justify-between items-center px-6 py-4 font-semibold text-gray-700"
               >
                 Capabilities
