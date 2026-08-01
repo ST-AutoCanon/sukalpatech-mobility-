@@ -22,7 +22,7 @@ const Enquiry = () => {
     try {
       // 1. Send enquiry to company
       await emailjs.send(
-        "service_bgl3vvn",
+        "service_4im2i73",
         "template_f9sr6pq",
         {
           full_name: formData.fullName,
@@ -36,7 +36,7 @@ const Enquiry = () => {
 
       // 2. Send auto reply to user
       await emailjs.send(
-        "service_bgl3vvn",
+        "service_4im2i73",
         "template_zycwdr5",
         {
           to_email: formData.email,
