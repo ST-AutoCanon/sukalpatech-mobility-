@@ -37,7 +37,7 @@ const Careers = () => {
         try {
             // 1. Send notification to company
             await emailjs.send(
-                "service_bgl3vvn",
+                "service_4im2i73",
                 "template_f9sr6pq",
                 {
                     first_name: formData.firstName,
@@ -50,7 +50,7 @@ const Careers = () => {
 
             // 2. Send auto reply to applicant
             await emailjs.send(
-                "service_bgl3vvn",
+                "service_4im2i73",
                 "template_zycwdr5",
                 {
                     to_email: formData.email,
