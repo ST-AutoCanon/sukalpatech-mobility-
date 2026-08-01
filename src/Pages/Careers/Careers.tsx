@@ -1,8 +1,9 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { CheckCircle } from "lucide-react";
 
 const Careers = () => {
-    const [successMessage, setSuccessMessage] = useState("");
+    const [showSuccess, setShowSuccess] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -30,59 +31,48 @@ const Careers = () => {
         }
     };
 
-   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  console.log(import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-  const form = new FormData();
+        try {
+            // 1. Send notification to company
+            await emailjs.send(
+                "service_bgl3vvn",
+                "template_f9sr6pq",
+                {
+                    first_name: formData.firstName,
+                    last_name: formData.lastName,
+                    qualification: formData.qualification,
+                    email: formData.email,
+                },
+                "MTAnQRgr1M_DqWtX4"
+            );
 
-  form.append(
-    "access_key",
-    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-  );
+            // 2. Send auto reply to applicant
+            await emailjs.send(
+                "service_bgl3vvn",
+                "template_zycwdr5",
+                {
+                    to_email: formData.email,
+                    full_name: formData.firstName,
+                },
+                "MTAnQRgr1M_DqWtX4"
+            );
 
-  form.append("first_name", formData.firstName);
-  form.append("last_name", formData.lastName);
-  form.append("email", formData.email);
-  form.append("qualification", formData.qualification);
+            setShowSuccess(true);
+            setFormData({
+                firstName: "",
+                lastName: "",
+                qualification: "",
+                email: "",
+                resume: null,
+            });
 
-//   if (formData.resume) {
-//     form.append("resume", formData.resume);
-//   }
-
-  const response = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    body: form,
-  });
-
-  const result = await response.json();
-
-  if (result.success) {
-    await emailjs.send(
-  "service_rgv58wa",
-  "template_zycwdr5", // Auto Reply Template
-  {
-    to_email: formData.email,
-    full_name: formData.firstName,
-  },
-  "MTAnQRgr1M_DqWtX4"
-);
-    setSuccessMessage("Your application has been submitted successfully!");
-
-    setFormData({
-      firstName: "",
-      lastName: "",
-      qualification: "",
-      email: "",
-      resume: null,
-    });
-
-    setTimeout(() => setSuccessMessage(""), 4000);
-  } else {
-    console.error(result);
-    alert("Failed to submit application");
-  }
-};
+        } catch (error) {
+            console.error(error);
+            alert("Failed to submit application.");
+        }
+    };
 
     return (
         <section className="py-10 lg:py-16 px-4 sm:px-6">
@@ -123,13 +113,39 @@ const Careers = () => {
                         If you are interested in joining Sukalpa Mobility Services, please
                         complete the application form below.
                     </p>
-                    {successMessage && (
-                        <div className="mb-6 rounded-lg border border-green-300 bg-green-100 px-4 py-3 text-sm sm:text-base text-green-700">
-                            {successMessage}
-                        </div>
-                    )}
-
                     <form onSubmit={handleSubmit} className="space-y-6">
+                        {showSuccess && (
+                            <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
+                                <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 text-center animate-[fadeIn_.3s_ease]">
+
+                                    <CheckCircle
+                                        size={64}
+                                        className="mx-auto text-[#7BAF2A] mb-5"
+                                    />
+
+                                    <h2 className="text-2xl font-bold text-[#0A2D63]">
+                                        Application Submitted
+                                    </h2>
+
+                                    <p className="text-gray-600 mt-3 leading-7">
+                                        Thank you for applying to Sukalpa Mobility Services.
+                                        <br />
+                                        We have received your application and our HR team will review it.
+                                        <br />
+                                        If your profile matches our requirements, we'll contact you soon.
+                                    </p>
+
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowSuccess(false)}
+                                        className="mt-8 bg-[#7BAF2A] hover:bg-[#0A2D63] text-white px-8 py-3 rounded-full transition"
+                                    >
+                                        OK
+                                    </button>
+
+                                </div>
+                            </div>
+                        )}
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>

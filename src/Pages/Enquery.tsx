@@ -17,61 +17,63 @@ const Enquiry = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  console.log(import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+    e.preventDefault();
 
-  const form = new FormData();
+    try {
+      // 1. Send enquiry to company
+      await emailjs.send(
+        "service_bgl3vvn",
+        "template_f9sr6pq",
+        {
+          full_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+        },
+        "MTAnQRgr1M_DqWtX4"
+      );
 
-  form.append(
-    "access_key",
-    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-  );
+      // 2. Send auto reply to user
+      await emailjs.send(
+        "service_bgl3vvn",
+        "template_zycwdr5",
+        {
+          to_email: formData.email,
+          full_name: formData.fullName,
+        },
+        "MTAnQRgr1M_DqWtX4"
+      );
 
-  form.append("full_name", formData.fullName);
-  form.append("email", formData.email);
-  form.append("phone", formData.phone);
-  form.append("company", formData.company);
-  form.append("message", formData.message);
+      setShowSuccess(true);
 
-  const response = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    body: form,
-  });
-
-  const result = await response.json();
-
-  if (result.success) {
-    await emailjs.send(
-  "service_rgv58wa",
-  "template_zycwdr5",
-  {
-    to_email: formData.email,
-    full_name: `${formData.fullName}`,
-  },
-  "MTAnQRgr1M_DqWtX4"
-);
-    setShowSuccess(true);
-
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    });
-  } else {
-    console.error(result);
-    alert("Failed to send enquiry");
-  }
-};
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send enquiry");
+    }
+  };
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
 
+    let updatedValue = value;
+
+    // Allow only numbers for phone field
+    if (name === "phone") {
+      updatedValue = value.replace(/\D/g, ""); // Removes everything except digits
+    }
+
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: updatedValue,
     });
   };
 
@@ -152,11 +154,14 @@ const Enquiry = () => {
             <div>
               <label className="block mb-2 font-medium">Phone Number</label>
               <input
-                type="text"
+                type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Enter your phone no"
+                placeholder="Enter your phone number"
+                maxLength={10}
+                inputMode="numeric"
+                pattern="[0-9]{10}"
                 className="w-full border rounded-xl px-4 py-3"
               />
             </div>
