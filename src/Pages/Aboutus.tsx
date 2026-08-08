@@ -78,7 +78,7 @@ const About = () => {
         <div className="absolute inset-0 bg-[#0A2D63]/70"></div>
 
         <div className="relative z-10 h-full flex items-center">
-          <div className="w-[90%] lg:w-[82%] mx-auto text-white">
+          <div className="w-[90%] lg:w-[90%] mx-auto text-white">
 
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold">
               About Us
@@ -101,7 +101,7 @@ const About = () => {
 
 <section className="pt-12 sm:pt-16 pb-4 sm:pb-6">
 
-  <div className="w-[90%] lg:w-[82%] mx-auto">
+  <div className="w-[90%] lg:w-[90%] mx-auto">
 
 <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
 
@@ -210,7 +210,7 @@ const About = () => {
 
       <section className="pt-8 pb-8">
 
-        <div className="w-[90%] lg:w-[82%] mx-auto">
+        <div className="w-[90%] lg:w-[90%] mx-auto">
 
           <div className="grid lg:grid-cols-[42%_58%] shadow-xl rounded-2xl overflow-hidden border border-gray-200">
 
@@ -319,7 +319,7 @@ const About = () => {
 
 <section className="pt-4 pb-16 sm:pb-20 bg-white">
 
-  <div className="w-[90%] lg:w-[82%] mx-auto">
+  <div className="w-[90%] lg:w-[90%] mx-auto">
 
     <div className="relative">
 

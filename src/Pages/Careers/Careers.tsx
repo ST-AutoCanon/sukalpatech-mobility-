@@ -77,7 +77,7 @@ const Careers = () => {
 
     return (
         <section className="py-10 lg:py-16 px-4 sm:px-6">
-           <div className="max-w-6xl mx-auto lg:-translate-x-8 space-y-16">
+           <div className="max-w-6xl mx-auto space-y-16">
                 {/* Left Section */}
                 <div className="w-full">
                     {/* Hero Section */}
@@ -105,7 +105,7 @@ const Careers = () => {
                             <img
                                 src={carrer}
                                 alt="Join Our Team"
-                                className="w-full h-[500px] rounded-3xl shadow-2xl object-cover"
+                                className="w-full h-[680px] rounded-3xl shadow-2xl object-cover"
                             />
                         </div>
 
@@ -137,8 +137,8 @@ const Careers = () => {
                     </p>
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {showSuccess && (
-                            <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
-                                <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 text-center animate-[fadeIn_.3s_ease]">
+                            <div className="fixed inset-0 flex items-center justify-center z-50 px-4 pointer-events-none">
+                                <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 text-center pointer-events-auto">
 
                                     <CheckCircle
                                         size={64}

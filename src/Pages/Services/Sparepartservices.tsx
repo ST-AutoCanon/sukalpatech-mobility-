@@ -103,7 +103,7 @@ const Sparepartservices = () => {
     <section className="bg-[#F8FAFC]">
       {/* Hero Section */}
       <div className="pt-10 pb-10 lg:pb-12">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="w-[94%] ml-[4%] lg:w-[90%] lg:ml-[4%]">
           <h1 className="text-4xl md:text-5xl font-bold text-[#0A2D63]">
             Spare Parts Management
           </h1>
@@ -126,7 +126,7 @@ const Sparepartservices = () => {
       </div>
 
       {/* Spare Parts Services */}
-      <div className="max-w-7xl mx-auto px-6 py-10 lg:py-12">
+    <div className="w-[94%] ml-[4%] lg:w-[90%] lg:ml-[4%]">
         <div className="text-left mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0A2D63]">
             Our Spare Parts Services
@@ -172,10 +172,8 @@ const Sparepartservices = () => {
       </div>
 
       {/* ================= SPARE PARTS PROCESS ================= */}
-      {/* ================= SPARE PARTS PROCESS ================= */}
 <div className="bg-white py-16">
-  <div className="max-w-7xl mx-auto px-6">
-
+  <div className="w-[94%] ml-[4%] lg:w-[90%] lg:ml-[4%]">
     {/* Heading */}
     <div className="text-left mb-14">
       <h2 className="text-3xl md:text-4xl font-bold text-[#0A2D63]">

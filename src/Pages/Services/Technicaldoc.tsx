@@ -40,7 +40,7 @@ const Technicalsupport = () => {
 
   return (
     <div className="pt-10 py-20 px-6 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="w-[95%] ml-[4%] lg:w-[90%] lg:ml-[3%]">
         <div className="text-left">
           <h2 className="text-4xl font-bold text-[#0A2D63]">
             Technical Support

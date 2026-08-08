@@ -224,7 +224,7 @@ const PostProduction = () => {
   return (
     <section className="bg-[#F8FAFC] pt-8 pb-16 lg:pt-10 lg:pb-24">
 
-      <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
+      <div className="w-[92%] sm:w-[90%] lg:w-[90%] mx-auto">
 
         {/* ================= PAGE HEADING ================= */}
 
@@ -234,7 +234,7 @@ const PostProduction = () => {
 
         <div className="w-16 h-1 bg-[#7BAF2A] mt-3 mb-8 rounded-full"></div>
 
-        <p className="text-gray-600 leading-8 text-base md:text-lg max-w-6xl">
+        <p className="text-gray-600 leading-8 text-base md:text-lg max-w-7xl">
           At Sukalpa Mobility Services, our commitment doesn't end when a vehicle
           leaves the production line. We provide comprehensive post-production
           support to ensure every vehicle continues to perform safely, reliably,
