@@ -1,6 +1,6 @@
 import { ArrowRight, Headset, Cpu, Leaf } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/image1.png";
+import logo from "../assets/SukalpaLogo.png";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -110,12 +110,19 @@ const Footer = () => {
                 className="h-20 w-auto flex-shrink-0"
               />
 
-              <div className="-ml-2 lg:-ml-1">
-                <h1 className="text-2xl sm:text-3xl lg:text-[35px] font-semibold text-[#0A2D63] leading-none">
+              <div>
+                <h1
+                  className="text-2xl sm:text-3xl lg:text-[35px] font-semibold text-[#0A2D63] leading-none"
+                  style={{ fontFamily: "'Insignia Roman', serif" }}
+                >
                   Sukalpa
                 </h1>
 
-                <p className="text-[10px] sm:text-xs lg:text-[16px] font-semibold uppercase tracking-wide text-[#7BAF2A] leading-none mt-1">
+                {/* Mobility Services - Tamrin */}
+                <p
+                  className="text-[10px] sm:text-xs lg:text-[16px] font-normal uppercase tracking-wide text-[#7BAF2A] leading-none mt-1"
+                  style={{ fontFamily: "'Tamrin', sans-serif" }}
+                >
                   Mobility Services
                 </p>
               </div>

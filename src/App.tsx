@@ -32,7 +32,11 @@ function App() {
           path="/services/technical-documentation"
           element={<Technicalsupport />}
         />
-        <Route path="/capabilities" element={<Capabilities />} />
+       {/* Only one Capabilities page */}
+        <Route
+          path="/capabilities"
+          element={<Capabilities />}
+        />
         <Route
           path="/capabilities/new-proto-development"
           element={<NewProtoDevelopment />}

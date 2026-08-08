@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logo from "../assets/image1.png";
+import logo from "../assets/SukalpaLogo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,23 +19,32 @@ const Header = () => {
       <div className="w-full px-4 sm:px-6 lg:px-7 py-3 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-14 sm:h-16 lg:h-20 w-auto"
-          />
+       <Link to="/" className="flex items-center gap-3 ml-3 sm:ml-4 lg:ml-9">
+  {/* Logo symbol only */}
+  <img
+    src={logo}
+    alt="Logo"
+    className="h-14 sm:h-16 lg:h-20 w-auto"
+  />
 
-          <div className="-ml-2 lg:-ml-3">
-            <h1 className="text-2xl sm:text-3xl lg:text-[35px] font-semibold text-[#0A2D63] leading-none">
-              Sukalpa
-            </h1>
+  <div>
+    {/* Sukalpa */}
+    <h1
+      className="text-2xl sm:text-3xl lg:text-[35px] font-semibold text-[#0A2D63] leading-none"
+      style={{ fontFamily: "'Insignia Roman', serif" }}
+    >
+      Sukalpa
+    </h1>
 
-            <p className="text-[10px] sm:text-xs lg:text-[16px] font-semibold uppercase tracking-wide text-[#7BAF2A] leading-none mt-1">
-              Mobility Services
-            </p>
-          </div>
-        </Link>
+    {/* Mobility Services */}
+    <p
+      className="text-[10px] sm:text-xs lg:text-[16px] uppercase tracking-wide text-[#7BAF2A] leading-none mt-1"
+      style={{ fontFamily: "'Tamrin', sans-serif" }}
+    >
+      Mobility Services
+    </p>
+  </div>
+</Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-9 text-lg font-semibold ml-2">
