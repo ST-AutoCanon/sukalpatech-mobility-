@@ -152,7 +152,7 @@ const PreHomologation = () => {
   return (
     <section className="bg-[#F8FAFC] pt-8 pb-16 lg:pt-10 lg:pb-24">
 
-      <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
+      <div className="w-[92%] sm:w-[90%] lg:w-[90%] mx-auto">
 
         {/* =====================================================
             PAGE TITLE

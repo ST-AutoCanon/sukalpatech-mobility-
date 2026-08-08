@@ -10,8 +10,6 @@ import designImg from "../../assets/Screenshot (654).png";
 import productionImg from "../../assets/Screenshot (655).png";
 import serviceManualImg from "../../assets/Screenshot (656).png";
 import sparePartsDocImg from "../../assets/Screenshot (657).png";
-import trainingMethodsImg from "../../assets/Screenshot (658).png";
-import trainingBenefitsImg from "../../assets/Screenshot (659).png";
 
 const Technicaldoc = () => {
   const [selectedService, setSelectedService] = useState<any>(null);
@@ -120,7 +118,7 @@ const Technicaldoc = () => {
           SERVICE MANUALS & TECHNICAL DOCUMENTATION
       ========================================================= */}
       <div className="bg-white pt-10 pb-20 px-6">
-        <div className="max-w-7xl mx-auto px-6">
+       <div className="w-[94%] ml-[4%] lg:w-[90%] lg:ml-[3%]">
 
           {/* Heading */}
           <div className="text-left">
@@ -177,78 +175,61 @@ const Technicaldoc = () => {
 
           {/* IMAGE */}
           <div
-            className={`w-full flex ${
-              index % 2 === 0
-                ? "lg:justify-start lg:order-1"
-                : "lg:justify-end lg:order-2"
-            }`}
-          >
-            <button
-              type="button"
-              onClick={() =>
-                setSelectedService(isOpen ? null : index)
-              }
-              className="
-                group
-                relative
-                w-full
-                max-w-[500px]
-                overflow-hidden
-                rounded-2xl
-                shadow-lg
-                cursor-pointer
-                focus:outline-none
-                focus:ring-4
-                focus:ring-[#7BAF2A]/30
-              "
-            >
-              <img
-                src={service.image}
-                alt={service.title}
-                className="
-                  w-full
-                  h-[250px]
-                  md:h-[330px]
-                  object-cover
-                  rounded-2xl
-                  transition-transform
-                  duration-500
-                  group-hover:scale-105
-                "
-              />
+  className={`w-full flex ${
+    index % 2 === 0
+      ? "lg:justify-start lg:order-1"
+      : "lg:justify-end lg:order-2"
+  }`}
+>
+  <div className="relative w-full max-w-[500px]">
 
-              {/* Hover overlay */}
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-[#0A2D63]/0
-                  group-hover:bg-[#0A2D63]/40
-                  transition-all
-                  duration-300
-                "
-              />
+    {/* IMAGE - NOT CLICKABLE */}
+    <img
+      src={service.image}
+      alt={service.title}
+      className="
+        w-full
+        h-[250px]
+        md:h-[330px]
+        object-cover
+        rounded-2xl
+        shadow-lg
+      "
+    />
 
-              {/* View Details */}
-              <div
-                className="
-                  absolute
-                  bottom-4
-                  right-4
-                  bg-white
-                  text-[#0A2D63]
-                  px-4
-                  py-2
-                  rounded-full
-                  text-sm
-                  font-semibold
-                  shadow-lg
-                "
-              >
-                View More
-              </div>
-            </button>
-          </div>
+    {/* VIEW MORE - ONLY THIS IS CLICKABLE */}
+    <button
+      type="button"
+      onClick={() =>
+        setSelectedService(isOpen ? null : index)
+      }
+      className="
+        absolute
+        bottom-4
+        right-4
+        bg-white
+        text-[#0A2D63]
+        px-4
+        py-2
+        rounded-full
+        text-sm
+        font-semibold
+        shadow-lg
+        hover:bg-[#7BAF2A]
+        hover:text-white
+        transition-all
+        duration-300
+        cursor-pointer
+        focus:outline-none
+        focus:ring-2
+        focus:ring-[#7BAF2A]
+      "
+    >
+      {isOpen ? "Hide details" : "View More"}
+    </button>
+
+  </div>
+</div>
 
           {/* TITLE + DESCRIPTION */}
           <div
@@ -326,8 +307,7 @@ const Technicaldoc = () => {
           TECHNICAL TRAINING
       ========================================================= */}
       <div className="bg-[#F8FAFC] py-20 px-6">
-        <div className="max-w-7xl mx-auto px-6">
-
+        <div className="w-[94%] ml-[4%] lg:w-[90%] lg:ml-[3%]">
           {/* Heading */}
           <div className="text-left">
             <h2 className="text-4xl font-bold text-[#0A2D63]">

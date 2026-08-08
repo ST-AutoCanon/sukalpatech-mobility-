@@ -160,7 +160,7 @@ const Home = () => {
         lg:-translate-x-1/2
         lg:-bottom-16
         w-[94%]
-        lg:w-[82%]
+        lg:w-[90%]
         mx-auto
         bg-white
         rounded-3xl
@@ -206,7 +206,8 @@ const Home = () => {
             </section>
 
             <section className="pt-24 lg:pt-29 pb-12 bg-white">
-                <div className="w-[94%] lg:w-[82%] mx-auto">
+                <div className="w-[94%] lg:w-[87%] mx-auto lg:translate-x-[-35px]">
+
                     <div className="max-w-6xl lg:pl-3">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
@@ -245,7 +246,7 @@ const Home = () => {
                 ref={servicesRef}
                 className="bg-white pt-0 pb-16"
             >
-                <div className="w-[94%] lg:w-[82%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+                <div className="w-[94%] lg:w-[89%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
 
                     {/* OUR SERVICES */}
                     <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
@@ -467,7 +468,7 @@ const Home = () => {
 
             <section className="bg-white pt-8 pb-16">
 
-                <div className="w-[94%] lg:w-[82%] mx-auto">
+                <div className="w-[94%] lg:w-[89%] mx-auto">
 
                     {/* Heading */}
                     <div className="max-w-4xl mb-10">
@@ -574,7 +575,7 @@ const Home = () => {
 
             <section className="pt-5 pb-10 bg-white">
 
-                <div className="w-[94%] lg:w-[82%] mx-auto">
+                <div className="w-[94%] lg:w-[89%] mx-auto">
                     <div className="text-center mb-16">
 
                         <p className="uppercase tracking-[4px] text-lg font-bold text-gray-600">
@@ -637,7 +638,7 @@ const Home = () => {
             </section>
             {/* ================= CALL TO ACTION ================= */}
             <section className="bg-white pt-8 pb-8 lg:pt-12 lg:pb-12">
-                <div className="w-[94%] lg:w-[82%] mx-auto">
+                <div className="w-[94%] lg:w-[89%] mx-auto">
                     <div className="bg-[#F8FAFC] rounded-3xl px-8 py-10 lg:py-12 text-center shadow-sm">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
