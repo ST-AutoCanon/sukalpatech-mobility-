@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Bus from "../assets/Bus.png";
+import Bus from "../assets/BusBannerimage.png";
 import BusSlide from "../assets/MobileBus.png";
 import { ArrowRight } from "lucide-react";
 import onsitediagnostic from "../assets/onsite.png";
@@ -149,8 +149,28 @@ const Home = () => {
 
                 {/* Feature Card */}
                 <div
-                    className="relative top-[480px] sm:mt-[420px] md:mt-[460px] lg:absolute lg:top-auto lg:left-1/2 lg:-translate-x-1/2 lg:-bottom-16
-                     w-[99%] lg:w-[80%] mx-auto bg-white rounded-3xl lg:rounded-full shadow-xl px-5 py-5 lg:py-4">
+                    className="
+        relative
+        top-[480px]
+        sm:mt-[420px]
+        md:mt-[460px]
+        lg:absolute
+        lg:top-auto
+        lg:left-1/2
+        lg:-translate-x-1/2
+        lg:-bottom-16
+        w-[94%]
+        lg:w-[82%]
+        mx-auto
+        bg-white
+        rounded-3xl
+        lg:rounded-full
+        shadow-xl
+        px-5
+        py-5
+        lg:py-4
+    "
+                >
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 lg:gap-0 lg:divide-x divide-gray-200">
                         {/* Item 1 */}
                         <div className="flex flex-col lg:flex-row items-center justify-center text-center lg:text-left gap-2 lg:gap-3 px-2 py-3">
@@ -186,15 +206,15 @@ const Home = () => {
             </section>
 
             <section className="pt-24 lg:pt-29 pb-12 bg-white">
-                <div className="w-[94%] lg:w-[82%] mx-auto px-8 lg:px-0">
-                    <div className="max-w-6xl">
+                <div className="w-[94%] lg:w-[82%] mx-auto">
+                    <div className="max-w-6xl lg:pl-3">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">
                             About <span className="text-[#7BAF2A]">Us</span>
                         </h2>
 
                         <div className="w-14 h-1 bg-[#7BAF2A] rounded-full mt-3 mb-8"></div>
-                        <div className="mt-6 px-2 lg:px-0 text-gray-600 text-base sm:text-lg leading-7 sm:leading-8 text-left lg:text-justify">
+                        <div className="mt-6 text-gray-600 text-base sm:text-lg leading-7 sm:leading-8 text-left lg:text-justify">
                             <p>
                                 Sukalpa Mobility Services is a leading EV after-sales service provider dedicated
                                 to maximizing vehicle uptime and ensuring reliable fleet performance.
@@ -225,7 +245,7 @@ const Home = () => {
                 ref={servicesRef}
                 className="bg-white pt-0 pb-16"
             >
-                <div className=" w-[94%] lg:w-[82%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch ">
+                <div className="w-[94%] lg:w-[82%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
 
                     {/* OUR SERVICES */}
                     <div className="bg-white rounded-[32px] shadow-lg border border-gray-100 p-8 flex flex-col">
@@ -241,30 +261,29 @@ const Home = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
                             {/* Card 1 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
-                                {/* Icon + Title */}
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-6 flex flex-col h-full">
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <Package className="w-12 h-12 text-[#7BAF2A] flex-shrink-0" />
 
-                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight min-h-[56px]">
+                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight min-h-[56px] flex items-center">
                                         SPARE PART MANAGEMENT
                                     </h3>
                                 </div>
 
-                                {/* Description */}
                                 <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
-                                    <li> Optimized component lines</li>
-                                    <li> Supply chain efficiency</li>
-                                    <li> Minimized asset standby</li>
+                                    <li>Optimized component lines</li>
+                                    <li>Supply chain efficiency</li>
+                                    <li>Minimized asset standby</li>
                                 </ul>
                             </div>
 
+
                             {/* Card 2 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-6 flex flex-col h-full">
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <Truck className="w-12 h-12 text-[#0A2D63] flex-shrink-0" />
 
-                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight">
+                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight min-h-[56px] flex items-center">
                                         MOBILE SERVICE VEHICLES
                                     </h3>
                                 </div>
@@ -272,16 +291,17 @@ const Home = () => {
                                 <ul className="list-disc pl-5 text-gray-600 text-sm space-y-2">
                                     <li>Rapid dispatch vans</li>
                                     <li>Specialized toolkits</li>
-                                    <li> Real-time on-field service</li>
+                                    <li>Real-time on-field service</li>
                                 </ul>
                             </div>
 
+
                             {/* Card 3 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-6 flex flex-col h-full">
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <Headset className="w-12 h-12 text-[#7BAF2A] flex-shrink-0" />
 
-                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight">
+                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight min-h-[56px] flex items-center">
                                         TECHNICAL SUPPORT CELL
                                     </h3>
                                 </div>
@@ -293,13 +313,14 @@ const Home = () => {
                                 </ul>
                             </div>
 
+
                             {/* Card 4 */}
-                            <div className="bg-white rounded-3xl shadow-md p-6 flex flex-col h-full">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-6 flex flex-col h-full">
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5 min-h-[72px]">
                                     <BookOpen className="w-12 h-12 text-[#0A2D63] flex-shrink-0" />
 
-                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight">
-                                        MANUAL,MMI & TRAINING
+                                    <h3 className="font-bold text-[#0A2D63] text-xl leading-tight min-h-[56px] flex items-center">
+                                        MANUAL, MMI & TRAINING
                                     </h3>
                                 </div>
 
@@ -309,8 +330,8 @@ const Home = () => {
                                     <li>Technical manual curation</li>
                                 </ul>
                             </div>
-                        </div>
 
+                        </div>
 
                         {/* Button */}
                         <button
@@ -345,7 +366,7 @@ const Home = () => {
 
 
                             {/* Capability Card 1 */}
-                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start gap-4 min-h-[170px]">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 min-h-[170px]">
 
                                 {/* Image */}
                                 <img
@@ -371,12 +392,7 @@ const Home = () => {
                                 </div>
 
                             </div>
-                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex
-                              flex-col
-                              sm:flex-row
-                              items-start
-                              sm:items-center
-                                gap-4">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 min-h-[170px]">
 
 
                                 <img
@@ -403,7 +419,7 @@ const Home = () => {
 
                             </div>
                             {/* Capability Card 2 */}
-                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <div className="bg-[#F8FAFC] rounded-3xl shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 min-h-[170px]">
                                 <img
                                     src={prepost}
                                     alt="Post Production Services"
@@ -425,7 +441,7 @@ const Home = () => {
                                 </div>
 
                                 <div className="w-10 h-10 rounded-full border border-[#7BAF2A] flex items-center justify-center">
-                                    <Wrench className="w-5 h-5 text-[#0A2D63]" />
+                                    <Wrench className="w-5 h-5 text-[#7BAF2A]" />
                                 </div>
 
                             </div>
@@ -558,7 +574,7 @@ const Home = () => {
 
             <section className="pt-5 pb-10 bg-white">
 
-                <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
+                <div className="w-[94%] lg:w-[82%] mx-auto">
                     <div className="text-center mb-16">
 
                         <p className="uppercase tracking-[4px] text-lg font-bold text-gray-600">
@@ -621,7 +637,7 @@ const Home = () => {
             </section>
             {/* ================= CALL TO ACTION ================= */}
             <section className="bg-white pt-8 pb-8 lg:pt-12 lg:pb-12">
-                <div className="w-[92%] sm:w-[90%] lg:w-[82%] mx-auto">
+                <div className="w-[94%] lg:w-[82%] mx-auto">
                     <div className="bg-[#F8FAFC] rounded-3xl px-8 py-10 lg:py-12 text-center shadow-sm">
 
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2D63]">

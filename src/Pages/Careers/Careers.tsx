@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CheckCircle } from "lucide-react";
+import carrer from "../../assets/Carrer.png"
 
 const Careers = () => {
     const [showSuccess, setShowSuccess] = useState(false);
@@ -76,38 +77,59 @@ const Careers = () => {
 
     return (
         <section className="py-10 lg:py-16 px-4 sm:px-6">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
-
+           <div className="max-w-6xl mx-auto lg:-translate-x-8 space-y-16">
                 {/* Left Section */}
-                <div className="lg:w-1/2 mt-2">
-                    <div>
-                        <h2 className="text-3xl sm:text-4xl font-bold text-[#0A2D63]">
+                <div className="w-full">
+                    {/* Hero Section */}
+                    <div className="text-left">
+
+                        <h2 className="text-4xl lg:text-5xl font-bold text-[#0A2D63]">
                             Join Our Team
                         </h2>
 
-                        <div className="w-20 h-1 bg-[#7BAF2A] rounded-full mb-2"></div>
+                        <div className="w-20 h-1 bg-[#7BAF2A] rounded-full mt-5 mb-8"></div>
+                        <div className="space-y-5">
+                            <p className="text-lg text-gray-600 leading-8">
+                                Once you submit your application, our team reviews your profile
+                                based on the role requirements and technical fit.
+                            </p>
 
-                        <p className="mt-4 text-base sm:text-lg text-gray-600 leading-7 sm:leading-8">
-                            Once you submit your application, our team reviews
-                            your profile based on the role requirements and technical
-                            fit.
-                        </p>
+                            <p className="text-lg text-gray-600 leading-8">
+                                Shortlisted candidates are contacted for further discussions,
+                                followed by role-specific evaluations and final interviews.
+                                Successful candidates will receive an offer and onboarding
+                                details directly from our HR team.
+                            </p>
+                        </div>
+                        <div className="mt-12">
+                            <img
+                                src={carrer}
+                                alt="Join Our Team"
+                                className="w-full h-[500px] rounded-3xl shadow-2xl object-cover"
+                            />
+                        </div>
 
-                        <p className="mt-5 text-base sm:text-lg text-gray-600 leading-7 sm:leading-8">
-                            Shortlisted candidates are contacted for further discussions,
-                            followed by role-specific evaluations and final interviews. Successful
-                            candidates will receive an offer and onboarding details directly
-                            from our HR team.
-                        </p>
                     </div>
                 </div>
 
                 {/* Right Section */}
-                <div className="lg:w-1/2 bg-white rounded-2xl shadow-lg p-6 sm:p-8 lg:p-10">
+                <div className="w-full mt-16 bg-white rounded-3xl border border-gray-200 shadow-xl p-8 lg:p-12">
 
-                    <h2 className="text-2xl sm:text-3xl font-bold text-[#0A2D63] mb-3">
-                        Career Application
-                    </h2>
+                    <div className="text-left mb-10">
+
+                        <span className="inline-block px-5 py-2 rounded-full bg-[#0A2D63]/10 text-[#0A2D63] text-sm font-semibold">
+                            Career Application
+                        </span>
+
+                        <h2 className="text-3xl font-bold text-[#0A2D63] mt-5">
+                            Apply for an Opportunity
+                        </h2>
+
+                        <p className="mt-3 text-gray-600">
+                            Complete the form below to submit your application.
+                        </p>
+
+                    </div>
 
                     <p className="text-gray-600 mb-10">
                         If you are interested in joining Sukalpa Mobility Services, please
@@ -224,26 +246,25 @@ const Careers = () => {
                                 Upload Resume <span className="text-red-500">*</span>
                             </label>
 
-                            <input
-                                type="file"
-                                accept=".pdf,.doc,.docx"
-                                onChange={handleFileChange}
-                                className="block w-full border rounded-lg p-3 text-sm
-             file:bg-[#0A2D63]
-             file:text-white
-             file:border-0
-             file:px-4
-             file:py-2
-             file:rounded-md
-             file:mr-3
-             file:mb-2
-             sm:file:mb-0"
-                            />
+                            <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-[#7BAF2A] transition">
+
+                                <input
+                                    type="file"
+                                    accept=".pdf,.doc,.docx"
+                                    onChange={handleFileChange}
+                                    className="w-full cursor-pointer"
+                                />
+
+                                <p className="text-sm text-gray-500 mt-3">
+                                    Upload Resume (.pdf, .doc, .docx)
+                                </p>
+
+                            </div>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full sm:w-auto bg-[#0A2D63] hover:bg-[#08306F] text-white px-8 py-3 rounded-lg font-semibold transition"
+                            className="w-full bg-[#0A2D63] hover:bg-[#7BAF2A] py-4 rounded-xl text-white text-lg font-semibold transition duration-300 shadow-lg"
                         >
                             Submit Application
                         </button>
