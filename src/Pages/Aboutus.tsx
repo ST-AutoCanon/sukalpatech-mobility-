@@ -1,4 +1,4 @@
-import banner from "../assets/bannerAbout.png";
+import banner from "../assets/AboutUsBanner.png";
 import story1 from "../assets/story1.png";
 import story2 from "../assets/story2.png";
 import story3 from "../assets/story3.png";
@@ -70,11 +70,20 @@ const About = () => {
       {/* ================= HERO ================= */}
 
       <section
-        className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[580px] bg-cover bg-top"
-        style={{
-          backgroundImage: `url(${banner})`,
-        }}
-      >
+  className="
+    relative
+    h-[350px]
+    sm:h-[400px]
+    md:h-[450px]
+    lg:h-[580px]
+    bg-no-repeat
+    bg-center
+    bg-[length:100%_100%]
+  "
+  style={{
+    backgroundImage: `url(${banner})`,
+  }}
+>
         <div className="absolute inset-0 bg-[#0A2D63]/70"></div>
 
         <div className="relative z-10 h-full flex items-center">
@@ -398,8 +407,8 @@ const About = () => {
     lg:left-1/2
     lg:-translate-x-1/2
 
-    -mt-24
-    sm:-mt-28
+    -mt-28
+    sm:-mt-32
     md:-mt-32
     lg:mt-0
 

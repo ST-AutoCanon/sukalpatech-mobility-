@@ -51,7 +51,7 @@ const PreHomologation = () => {
       step: "02",
       icon: ShieldCheck,
       title: "Functional System Validation",
-      
+
       points: [
         {
           icon: Zap,
@@ -118,7 +118,7 @@ const PreHomologation = () => {
       step: "04",
       icon: FlaskConical,
       title: "Test Preparation",
-     
+
       points: [
         {
           icon: ClipboardCheck,
@@ -257,11 +257,6 @@ const PreHomologation = () => {
                       LARGE GREEN NUMBER CIRCLE
                   ================================================= */}
 
-
-                  {/* =================================================
-                      MAIN CARD
-                  ================================================= */}
-
                   <div
                     className={`
     w-full
@@ -285,16 +280,13 @@ const PreHomologation = () => {
                         CARD HEADER
                     ================================================= */}
 
-                   {/* =================================================
-    CARD HEADER
-================================================= */}
 
-<button
-  type="button"
-  onClick={() =>
-    setActiveIndex(isOpen ? -1 : index)
-  }
-  className="
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveIndex(isOpen ? -1 : index)
+                      }
+                      className="
     w-full
     flex
     items-center
@@ -307,16 +299,16 @@ const PreHomologation = () => {
     sm:py-7
     text-left
   "
->
+                    >
 
-  {/* LEFT HEADER CONTENT */}
+                      {/* LEFT HEADER CONTENT */}
 
-  <div className="flex items-center gap-3 sm:gap-5 min-w-0 flex-1">
+                      <div className="flex items-center gap-3 sm:gap-5 min-w-0 flex-1">
 
-    {/* MOBILE NUMBER */}
+                        {/* MOBILE NUMBER */}
 
-    <div
-      className="
+                        <div
+                          className="
         sm:hidden
         flex-shrink-0
         w-10
@@ -330,15 +322,15 @@ const PreHomologation = () => {
         font-bold
         text-sm
       "
-    >
-      {item.step}
-    </div>
+                        >
+                          {item.step}
+                        </div>
 
 
-    {/* SECTION ICON */}
+                        {/* SECTION ICON */}
 
-    <div
-      className={`
+                        <div
+                          className={`
         flex-shrink-0
         w-11
         h-11
@@ -351,26 +343,25 @@ const PreHomologation = () => {
         transition-all
         duration-300
 
-        ${
-          isOpen
-            ? "bg-[#7BAF2A] text-white"
-            : "bg-[#0A2D63]/10 text-[#0A2D63]"
-        }
+        ${isOpen
+                              ? "bg-[#7BAF2A] text-white"
+                              : "bg-[#0A2D63]/10 text-[#0A2D63]"
+                            }
       `}
-    >
-      <StepIcon
-        size={24}
-        strokeWidth={1.8}
-      />
-    </div>
+                        >
+                          <StepIcon
+                            size={24}
+                            strokeWidth={1.8}
+                          />
+                        </div>
 
 
-    {/* TITLE */}
+                        {/* TITLE */}
 
-    <div className="min-w-0 flex-1">
+                        <div className="min-w-0 flex-1">
 
-      <h3
-        className="
+                          <h3
+                            className="
           text-base
           sm:text-2xl
           font-bold
@@ -379,21 +370,21 @@ const PreHomologation = () => {
           sm:leading-7
           break-words
         "
-      >
-        {item.title}
-      </h3>
+                          >
+                            {item.title}
+                          </h3>
 
-    </div>
+                        </div>
 
-  </div>
+                      </div>
 
 
-  {/* =================================================
+                      {/* =================================================
       CHEVRON
   ================================================= */}
 
-  <div
-    className="
+                      <div
+                        className="
       flex-shrink-0
       w-8
       h-8
@@ -403,25 +394,25 @@ const PreHomologation = () => {
       items-center
       justify-center
     "
-  >
+                      >
 
-    {isOpen ? (
-      <ChevronUp
-        size={24}
-        strokeWidth={2}
-        className="text-[#7BAF2A]"
-      />
-    ) : (
-      <ChevronDown
-        size={24}
-        strokeWidth={2}
-        className="text-[#0A2D63]"
-      />
-    )}
+                        {isOpen ? (
+                          <ChevronUp
+                            size={24}
+                            strokeWidth={2}
+                            className="text-[#7BAF2A]"
+                          />
+                        ) : (
+                          <ChevronDown
+                            size={24}
+                            strokeWidth={2}
+                            className="text-[#0A2D63]"
+                          />
+                        )}
 
-  </div>
+                      </div>
 
-</button>
+                    </button>
 
 
                     {/* =================================================
@@ -470,11 +461,6 @@ const PreHomologation = () => {
 
                           </div>
 
-
-                          {/* =================================================
-                              ACTIVITY VERTICAL TIMELINE
-                          ================================================= */}
-
                           {/* =================================================
     KEY ACTIVITIES LAYOUT
 ================================================= */}
@@ -483,27 +469,14 @@ const PreHomologation = () => {
 
                             {/* VERTICAL LINE ONLY FOR STEP 01 */}
 
-                            {index === 0 && (
-                              <div
-                                className="
-        absolute
-        left-[21px]
-        top-6
-        bottom-6
-        w-[2px]
-        bg-[#7BAF2A]/30
-      "
-                              />
-                            )}
-
 
                             <div
                               className={`
-      ${index === 0
+                               ${index === 0
                                   ? "space-y-5"
                                   : "grid grid-cols-1 sm:grid-cols-2 gap-5"
                                 }
-    `}
+                               `}
                             >
 
                               {item.points.map((point, i) => {
@@ -515,11 +488,11 @@ const PreHomologation = () => {
                                   <div
                                     key={i}
                                     className={`
-            relative
-            flex
-            items-center
-            ${index === 0 ? "" : "min-w-0"}
-          `}
+                                     relative
+                                     flex
+                                    items-center
+                                    ${index === 0 ? "" : "min-w-0"}
+                                   `}
                                   >
 
                                     {/* =================================================
@@ -528,20 +501,20 @@ const PreHomologation = () => {
 
                                     <div
                                       className="
-              relative
-              z-10
-              flex-shrink-0
-              w-[43px]
-              h-[43px]
-              rounded-full
-              bg-white
-              border-2
-              border-[#7BAF2A]
-              flex
-              items-center
-              justify-center
-              text-[#0A2D63]
-            "
+                                     relative
+                                      z-10
+                                    flex-shrink-0
+                                      w-[43px]
+                                      h-[43px]
+                                    rounded-full
+                                       bg-white
+                                       border-2
+                                     border-[#7BAF2A]
+                                      flex
+                                     items-center
+                                    justify-center
+                                  text-[#0A2D63]
+                                          "
                                     >
                                       <PointIcon
                                         size={20}

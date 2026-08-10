@@ -262,9 +262,6 @@ const NewProtoDevelopment = () => {
                       }
                     `}
                   >
-
-                    {/* ================= HEADER ================= */}
-
                     {/* ================= HEADER ================= */}
 
                     <button
@@ -431,20 +428,7 @@ const NewProtoDevelopment = () => {
 
                           <div className="relative">
 
-                            {/* INNER LINE — ONLY FOR VERTICAL LAYOUT */}
 
-                            {index < 2 && (
-                              <div
-                                className="
-        absolute
-        left-[19px]
-        top-5
-        bottom-5
-        w-[2px]
-        bg-[#7BAF2A]/30
-      "
-                              />
-                            )}
 
 
                             {/* =================================================
@@ -469,12 +453,12 @@ const NewProtoDevelopment = () => {
                                   <div
                                     key={i}
                                     className="
-            relative
-            flex
-            items-start
-            gap-4
-            min-w-0
-          "
+    relative
+    flex
+    items-center
+    gap-4
+    min-w-0
+  "
                                   >
 
                                     {/* =================================================
