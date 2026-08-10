@@ -339,7 +339,6 @@ const PostProduction = () => {
                     `}
                   >
 
-                    {/* ================= HEADER ================= */}
 
                     {/* ================= HEADER ================= */}
 
@@ -520,20 +519,10 @@ const PostProduction = () => {
                             {item.label}
                           </h4>
 
-
-                          {/* INNER VERTICAL TIMELINE */}
-
-                          {/* =================================================
-    KEY ACTIVITIES
-================================================= */}
+                          {/* ================================================ KEY ACTIVITIES ================================================= */}
 
                           <div className="relative">
 
-                            {/* =================================================
-      INNER LINE
-      Only show for single-column layout.
-      Currently all sections use 2-column grid.
-  ================================================= */}
 
                             {/* POINTS */}
 
@@ -557,7 +546,7 @@ const PostProduction = () => {
                                     className="
             relative
             flex
-            items-start
+            items-center
             gap-4
             min-w-0
           "

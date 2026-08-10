@@ -77,7 +77,7 @@ const Careers = () => {
 
     return (
         <section className="py-10 lg:py-16 px-4 sm:px-6">
-           <div className="max-w-6xl mx-auto space-y-16">
+            <div className="w-[90%] lg:w-[94%] mx-auto">
                 {/* Left Section */}
                 <div className="w-full">
                     {/* Hero Section */}
@@ -105,7 +105,7 @@ const Careers = () => {
                             <img
                                 src={carrer}
                                 alt="Join Our Team"
-                                className="w-full h-[680px] rounded-3xl shadow-2xl object-cover"
+                                className="w-full h-[680px] rounded-3xl shadow-2xl object-fill"
                             />
                         </div>
 
