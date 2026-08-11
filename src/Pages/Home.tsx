@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Bus from "../assets/Busbanner.png";
-import BusSlide from "../assets/MobileBus.png";
+import BusSlide from "../assets/MobileBusbanner.png";
 import { ArrowRight } from "lucide-react";
 import onsitediagnostic from "../assets/onsite.png";
 import homologation from "../assets/homologation.png";
