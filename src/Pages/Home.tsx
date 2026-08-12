@@ -38,29 +38,29 @@ const Home = () => {
         });
     };
 
-    const testimonials = [
-        {
-            image: Test3,
-            name: "Nat Reynolds",
-            role: "Fleet Operations Manager",
-            review:
-                "Sukalpa Mobility has consistently provided reliable after-sales support. Their technical team responds quickly and keeps our EV fleet running efficiently.",
-        },
-        {
-            image: Test1,
-            name: "Celia Almeida",
-            role: "Service Coordinator",
-            review:
-                "Their engineering expertise and proactive maintenance support have significantly reduced vehicle downtime. The overall service experience has been excellent.",
-        },
-        {
-            image: Test2,
-            name: "Bob Roberts",
-            role: "Technical Manager",
-            review:
-                "From diagnostics to commissioning support, the team delivers professional service with great attention to detail. Highly recommended for EV fleet support.",
-        },
-    ];
+    // const testimonials = [
+    //     {
+    //         image: Test3,
+    //         name: "Nat Reynolds",
+    //         role: "Fleet Operations Manager",
+    //         review:
+    //             "Sukalpa Mobility has consistently provided reliable after-sales support. Their technical team responds quickly and keeps our EV fleet running efficiently.",
+    //     },
+    //     {
+    //         image: Test1,
+    //         name: "Celia Almeida",
+    //         role: "Service Coordinator",
+    //         review:
+    //             "Their engineering expertise and proactive maintenance support have significantly reduced vehicle downtime. The overall service experience has been excellent.",
+    //     },
+    //     {
+    //         image: Test2,
+    //         name: "Bob Roberts",
+    //         role: "Technical Manager",
+    //         review:
+    //             "From diagnostics to commissioning support, the team delivers professional service with great attention to detail. Highly recommended for EV fleet support.",
+    //     },
+    // ];
     return (
         <>
             <section className="relative w-full min-h-[1300px] lg:min-h-screen overflow-visible">
@@ -466,7 +466,7 @@ const Home = () => {
 
             { }
 
-            <section className="bg-white pt-8 pb-16">
+            <section className="bg-white pt-8 pb-2">
 
                 <div className="w-[94%] lg:w-[89%] mx-auto">
 
@@ -573,7 +573,7 @@ const Home = () => {
 
             </section>
 
-            <section className="pt-5 pb-10 bg-white">
+            {/* <section className="pt-5 pb-10 bg-white">
 
                 <div className="w-[94%] lg:w-[89%] mx-auto">
                     <div className="text-center mb-16">
@@ -635,7 +635,7 @@ const Home = () => {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
             {/* ================= CALL TO ACTION ================= */}
             <section className="bg-white pt-8 pb-8 lg:pt-12 lg:pb-12">
                 <div className="w-[94%] lg:w-[89%] mx-auto">
